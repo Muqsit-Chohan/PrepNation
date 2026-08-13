@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14">
             {/* Logo */}
-            <a href="#" className="flex items-center flex-shrink-0">
+            <a href="#" className="flex items-center gap-1 flex-shrink-0">
               <img src={logo} alt="PrepNation Logo" className="h-8 w-auto rounded-md" />
               <span className="font-black text-xl tracking-tight" style={{ color: '#1E1B4B' }}>
                 Prep<span style={{ color: '#F59E0B' }}>Nation</span>
