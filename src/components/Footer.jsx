@@ -1,4 +1,5 @@
 import { Globe, MessageCircle, Camera, BriefcaseBusiness, Mail } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const links = {
@@ -15,9 +16,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#4F46E5' }}>
-                <div className="w-4 h-4 bg-white rounded-full"></div>
-              </div>
+              <img src={logo} alt="PrepNation Logo" className="h-8 w-auto rounded-md" />
               <span className="font-bold text-xl">PrepNation</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">

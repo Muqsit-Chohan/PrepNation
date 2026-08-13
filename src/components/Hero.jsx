@@ -101,9 +101,6 @@ const Hero = () => {
           {/* Right Column — 2×2 Animated Grid with Background Images from assets */}
           <div className="relative">
             {/* Doodles */}
-            {/* <Bookmark className="absolute -top-6 left-1/2 -translate-x-16 z-20" color="#EF4444" size={26} /> */}
-            <Sparkle  className="absolute top-2 right-4 z-20"   color="#F59E0B" size={28} />
-            {/* <Wave     className="absolute -bottom-6 left-2 z-20" color="#4F46E5" size={72} /> */}
             <Sparkle  className="absolute top-1/2 -left-5 z-20"  color="#10B981" size={20} />
 
             {/* Custom Interactive 2x2 Grid */}
@@ -129,10 +126,10 @@ const Hero = () => {
 
                 {/* Content */}
                 <div className="relative z-20 flex justify-between items-start">
-                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
+                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
                     <BookOpen size={22} className="text-white" />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider bg-emerald-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
+                  </div> */}
+                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-emerald-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
                     10M+ Solved
                   </span>
                 </div>
@@ -142,7 +139,6 @@ const Hero = () => {
                     <CheckCircle size={13} className="text-emerald-400" /> Topic-wise MCQs
                   </div>
                   <h3 className="font-black text-lg leading-snug text-white">Chapter MCQ Bank</h3>
-                  <p className="text-xs text-emerald-100/85 mt-0.5">Detailed step-by-step keys</p>
                 </div>
               </motion.div>
 
@@ -166,10 +162,10 @@ const Hero = () => {
 
                 {/* Content */}
                 <div className="relative z-20 flex justify-between items-start">
-                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
+                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
                     <Sparkles size={22} className="text-amber-300 animate-pulse" />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider bg-amber-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
+                  </div> */}
+                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-amber-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
                     24/7 Instant
                   </span>
                 </div>
@@ -179,7 +175,6 @@ const Hero = () => {
                     <Sparkles size={13} className="text-amber-300" /> Smart Assistant
                   </div>
                   <h3 className="font-black text-lg leading-snug text-white">AI Study Partner</h3>
-                  <p className="text-xs text-amber-100/85 mt-0.5">Ask Physics &amp; Math doubts</p>
                 </div>
               </motion.div>
 
@@ -203,10 +198,10 @@ const Hero = () => {
 
                 {/* Content */}
                 <div className="relative z-20 flex justify-between items-start">
-                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
+                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
                     <BookText size={22} className="text-white" />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider bg-blue-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
+                  </div> */}
+                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-blue-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
                     10 Years
                   </span>
                 </div>
@@ -216,7 +211,6 @@ const Hero = () => {
                     <Award size={13} className="text-blue-300" /> FBISE &amp; BISE
                   </div>
                   <h3 className="font-black text-lg leading-snug text-white">Solved Past Papers</h3>
-                  <p className="text-xs text-blue-100/85 mt-0.5">Filter by Board &amp; Year</p>
                 </div>
               </motion.div>
 
@@ -239,11 +233,11 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-950/95 via-rose-900/60 to-rose-800/40 z-10" />
 
                 {/* Content */}
-                <div className="relative z-20 flex justify-between items-start">
-                  <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
+                <div className="relative z-20 flex justify-between items-end">
+                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
                     <Clock size={22} className="text-white" />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider bg-rose-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
+                  </div> */}
+                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-rose-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
                     Real Exam
                   </span>
                 </div>
@@ -253,7 +247,6 @@ const Hero = () => {
                     <GraduationCap size={13} className="text-rose-300" /> Exam Simulator
                   </div>
                   <h3 className="font-black text-lg leading-snug text-white">Board Mock Tests</h3>
-                  <p className="text-xs text-rose-100/85 mt-0.5">Instant scoring &amp; rank</p>
                 </div>
               </motion.div>
 
