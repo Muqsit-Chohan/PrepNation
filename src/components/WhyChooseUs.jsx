@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { BookOpen, GraduationCap, Laptop, ClipboardCheck, ShieldCheck, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import boardMatchedImage from '../assets/BoardMatched.jpg';
+import toppersChoiceImage from '../assets/ToppersChoice.jpg';
+import smartAiRadarImage from '../assets/SmartAIRadar.jpg';
+import offlineDownloadsImage from '../assets/OfflineDownloads.jpg';
 
 const WhyChooseUs = () => (
   <section className="py-24 overflow-hidden bg-white relative">
@@ -18,28 +22,36 @@ const WhyChooseUs = () => (
             {[
               { 
                 Icon: BookOpen, 
-                bg: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%)', 
+                image: boardMatchedImage,
+                imageClass: 'object-[center_45%]',
+                bg: 'linear-gradient(135deg, rgba(252, 211, 77, 0.72) 0%, rgba(245, 158, 11, 0.88) 100%)', 
                 tall: true, 
                 title: 'Board Matched', 
                 desc: '100% FBISE & Provincial' 
               },
               { 
                 Icon: GraduationCap, 
-                bg: 'linear-gradient(135deg, #818CF8 0%, #4F46E5 100%)', 
+                image: toppersChoiceImage,
+                imageClass: 'object-[center_1%] ',
+                bg: 'linear-gradient(135deg, rgba(129, 140, 248, 0.72) 0%, rgba(79, 70, 229, 0.88) 100%)', 
                 tall: false, 
                 title: 'Toppers Choice', 
                 desc: '95%+ Average Score' 
               },
               { 
                 Icon: ClipboardCheck, 
-                bg: 'linear-gradient(135deg, #34D399 0%, #059669 100%)', 
+                image: smartAiRadarImage,
+                imageClass: 'object-[center_1%]',
+                bg: 'linear-gradient(135deg, rgba(52, 211, 153, 0.72) 0%, rgba(5, 150, 105, 0.88) 100%)', 
                 tall: false, 
                 title: 'Smart AI Radar', 
                 desc: 'Weakness Tracking' 
               },
               { 
                 Icon: Laptop, 
-                bg: 'linear-gradient(135deg, #F87171 0%, #DC2626 100%)', 
+                image: offlineDownloadsImage,
+                imageClass: 'object-[center_0%]',
+                bg: 'linear-gradient(135deg, rgba(248, 113, 113, 0.72) 0%, rgba(220, 38, 38, 0.88) 100%)', 
                 tall: true, 
                 title: 'Offline Downloads', 
                 desc: 'Zero Data Mode' 
@@ -49,13 +61,23 @@ const WhyChooseUs = () => (
                 key={i} 
                 whileHover={{ scale: 1.03, y: -4 }}
                 className="rounded-3xl p-6 shadow-xl flex flex-col justify-between relative overflow-hidden text-white border border-white/20" 
-                style={{ height: item.tall ? '250px' : '190px', background: item.bg }}
+                style={{
+                  height: item.tall ? '250px' : '190px',
+                }}
               >
-                <div className="w-11 h-11 rounded-2xl bg-white/25 backdrop-blur-md flex items-center justify-center shadow-sm">
+                <img
+                  src={item.image}
+                  alt=""
+                  aria-hidden="true"
+                  className={`absolute inset-0 w-full h-full object-cover ${item.imageClass}`}
+                />
+                <div className="absolute inset-0" style={{ background: item.bg }} />
+
+                <div className="relative z-10 w-11 h-11 rounded-2xl bg-white/25 backdrop-blur-md flex items-center justify-center shadow-sm">
                   <item.Icon size={22} className="text-white" />
                 </div>
 
-                <div>
+                <div className="relative z-10">
                   <span className="text-[10px] font-black uppercase tracking-wider bg-black/20 text-white px-3 py-1 rounded-full backdrop-blur-sm inline-block mb-2">
                     {item.desc}
                   </span>
