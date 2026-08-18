@@ -55,7 +55,8 @@ function App() {
 
       {/* Global Bottom Announcement Bar */}
       <div
-        className="hidden"
+        id="announcement"
+        className="px-6 py-4 text-center text-white scroll-mt-24"
         style={{ background: '#1E1B4B' }}
       >
         🎉 Launching on Google Play &amp; App Store soon!{' '}

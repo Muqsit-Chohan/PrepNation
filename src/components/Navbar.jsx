@@ -23,8 +23,8 @@ const Navbar = () => {
     { name: 'For Students', href: '#features' },
     { name: 'Features', href: '#features' },
     { name: 'Pricing', href: '#pricing' },
-    { name: 'About Us', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'About Us', href: '#about-us' },
+    { name: 'Contact', href: '#announcement' },
   ];
 
   return (

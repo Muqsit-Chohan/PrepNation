@@ -6,7 +6,7 @@ import smartAiRadarImage from '../assets/SmartAIRadar.jpg';
 import offlineDownloadsImage from '../assets/OfflineDownloads.jpg';
 
 const WhyChooseUs = () => (
-  <section className="py-24 overflow-hidden bg-white relative">
+  <section id="about-us" className="py-24 overflow-hidden bg-white relative scroll-mt-24">
     <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
