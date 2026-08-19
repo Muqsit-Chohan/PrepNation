@@ -68,7 +68,7 @@ const Features = () => (
           Everything You Need to Outperform in Board Exams
         </h2>
         <p className="text-gray-500 text-base leading-relaxed">
-          Designed specifically to eliminate exam fear and give Pakistani students the winning edge.
+          A complete mobile application that puts notes, practice, AI guidance and progress tracking in your pocket.
         </p>
       </div>
 

@@ -20,7 +20,7 @@ const Footer = () => {
               <span className="font-bold text-xl">PrepNation</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Pakistan's smartest way to prep for your exams. Empowering students with modern tools, AI insights, and comprehensive resources.
+              Pakistan's smartest exam-prep mobile application. Learn, practice and track your progress from one powerful app.
             </p>
             <div className="flex gap-4 text-white">
               {[

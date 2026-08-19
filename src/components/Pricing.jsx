@@ -44,7 +44,7 @@ const Pricing = () => (
           SIMPLE PRICING
         </p>
         <h2 className="text-3xl md:text-4xl font-black mb-4" style={{ color: '#1E1B4B' }}>
-          Pricing That Works for Pakistani Students
+          Mobile App Plans That Work for Pakistani Students
         </h2>
         <p className="text-gray-400 max-w-xl mx-auto text-base">
           Premium exam prep at a fraction of the cost of traditional academies.

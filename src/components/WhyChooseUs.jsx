@@ -119,7 +119,7 @@ const WhyChooseUs = () => {
           </h2>
           
           <p className="text-gray-500 leading-relaxed mb-8 text-base">
-            PrepNation was created to bridge the gap between traditional academy rote-learning and modern exam prep. Every single question in our bank is verified by senior board examiners.
+            PrepNation is a complete mobile application created to bridge the gap between traditional academy rote-learning and modern exam prep. Every single question in our bank is verified by senior board examiners.
           </p>
 
           <div className="space-y-4 mb-8">
@@ -144,7 +144,7 @@ const WhyChooseUs = () => {
             className="px-8 py-4 rounded-full font-black text-gray-900 shadow-[0_8px_24px_rgba(21,154,156,0.24)]"
             style={{ background: '#8FD3F4' }}
           >
-            Join 50,000+ Students Today
+            Download the PrepNation Mobile App
           </motion.button>
         </motion.div>
 

@@ -85,8 +85,7 @@ const Hero = () => {
             </div>
 
             <p className="text-gray-500 text-md leading-relaxed mb-10 max-w-md">
-              Unlimited MCQs, past papers, mock tests &amp; an AI tutor - all in one place.
-              Built specifically for Matric, Inter, O-Level &amp; A-Level students across Pakistan.
+              PrepNation is a complete mobile application for notes, MCQs, past papers, mock tests and AI support—built specifically for Matric, Inter, O-Level &amp; A-Level students across Pakistan.
             </p>
 
             <div className="flex items-center gap-5 -mt-7  flex-wrap">

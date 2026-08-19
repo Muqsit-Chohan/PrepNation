@@ -92,7 +92,7 @@ const Companion = () => (
             </div>
             <div>
               <p className="font-black text-sm text-indigo-950">50,000+ Active Students</p>
-              <p className="text-[11px] text-gray-400 font-medium">Studying across all boards in Pakistan</p>
+              <p className="text-[11px] text-gray-400 font-medium">Learning on the PrepNation mobile app</p>
             </div>
           </motion.div>
         </motion.div>
@@ -117,7 +117,7 @@ const Companion = () => (
           </p>
 
           {[
-            { label: 'AI Tutor for Instant Doubt Clearing',   sub: 'Get step-by-step solutions anytime, for free.' },
+            { label: 'Mobile App AI Tutor',   sub: 'Get step-by-step solutions anytime, right from your phone.' },
             { label: 'Community of 50K+ Pakistani Students',  sub: 'Study with peers, share tips, compete on leaderboards.' },
           ].map((item, i) => (
             <div key={i} className="flex gap-4 mb-6">
