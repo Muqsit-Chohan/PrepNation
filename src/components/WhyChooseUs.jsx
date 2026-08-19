@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Sparkles, CheckCircle2 } from 'lucide-react';
-import aiChatVideo from '../assets/video/aichat.mp4';
-import examVideo from '../assets/video/exam.mp4';
-import notesVideo from '../assets/video/notes.mp4';
-import topperVideo from '../assets/video/topper.mp4';
+import aiChatVideo from '../assets/Video/aichat.mp4';
+import examVideo from '../assets/Video/exam.mp4';
+import notesVideo from '../assets/Video/notes.mp4';
+import topperVideo from '../assets/Video/topper.mp4';
 
 const WhyChooseUs = () => {
   const [activeVideo, setActiveVideo] = useState(0);
