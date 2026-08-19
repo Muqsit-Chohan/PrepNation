@@ -61,13 +61,13 @@ const Pricing = () => (
             transition={{ delay: i * 0.1, duration: 0.5 }}
             className="relative rounded-3xl p-7 flex flex-col"
             style={plan.popular
-              ? { background: '#1E1B4B', boxShadow: '0 20px 50px rgba(30,27,75,0.3)', transform: 'scale(1.04)', zIndex: 10 }
-              : { background: '#FFFBEB', border: '1.5px solid #FDE68A' }
+                ? { background: '#064B83', boxShadow: '0 20px 50px rgba(6,75,131,0.22)', transform: 'scale(1.04)', zIndex: 10 }
+              : { background: '#EDF7FF', border: '1.5px solid #B9DEF5', boxShadow: '0 10px 28px rgba(22,78,112,0.08)' }
             }
           >
             {plan.popular && (
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 text-xs font-black px-4 py-1.5 rounded-full tracking-widest"
-                style={{ background: '#F59E0B', color: '#1E1B4B' }}>
+                style={{ background: '#8FD3F4', color: '#064B83' }}>
                 ⭐ MOST POPULAR
               </div>
             )}
@@ -95,8 +95,8 @@ const Pricing = () => (
               whileTap={{ scale: 0.97 }}
               className="w-full py-3.5 rounded-xl font-black text-sm transition-all"
               style={plan.popular
-                ? { background: '#F59E0B', color: '#1E1B4B', boxShadow: '0 4px 16px rgba(245,158,11,0.5)' }
-                : { background: 'white', color: '#1E1B4B', border: '1.5px solid #FDE68A' }
+                ? { background: '#8FD3F4', color: '#064B83', boxShadow: '0 6px 18px rgba(143,211,244,0.35)' }
+                : { background: 'white', color: '#064B83', border: '1.5px solid #B9DEF5', boxShadow: '0 4px 12px rgba(22,78,112,0.06)' }
               }
             >
               Choose Plan

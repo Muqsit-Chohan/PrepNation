@@ -59,7 +59,7 @@ const AnimatedCursor = () => {
           y: mouseY,
           translateX: '-50%',
           translateY: '-50%',
-          background: '#F59E0B',
+          background: '#0861A8',
         }}
         animate={{
           scale: isHovering ? 0 : 1,
@@ -75,7 +75,7 @@ const AnimatedCursor = () => {
           y: ringY,
           translateX: '-50%',
           translateY: '-50%',
-          borderColor: '#F59E0B',
+          borderColor: '#0861A8',
           background: isHovering ? 'rgba(245, 158, 11, 0.15)' : 'transparent',
         }}
         animate={{

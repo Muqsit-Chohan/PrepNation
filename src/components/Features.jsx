@@ -1,59 +1,59 @@
 import { motion } from 'framer-motion';
-import { FileText, Brain, Target, BarChart2, PlayCircle, BookOpen, ArrowUpRight } from 'lucide-react';
+import { FileText, Brain, BarChart2, BookOpen, ClipboardList, ArrowUpRight } from 'lucide-react';
 
 const benefits = [
   {
     icon: FileText,
-    iconColor: '#F59E0B',
-    bgColor: '#FEF3C7',
-    tag: '10 Years Solved',
-    title: 'Solved Past Papers',
-    desc: 'Complete 10-year past paper keys from all major boards (FBISE, Punjab, Sindh, KPK, Cambridge), indexed by chapter and difficulty.',
+    iconColor: '#2204EC',
+    bgColor: '#E8E5FF',
+    tag: 'Study Anywhere',
+    title: 'Notes Online',
+    desc: 'Access organized chapter notes, key concepts and quick revision material online whenever you need it—at home or on the go.',
   },
   {
     icon: Brain,
-    iconColor: '#8B5CF6',
-    bgColor: '#EDE9FE',
-    tag: '24/7 AI Assistance',
-    title: 'Instant AI Tutor',
-    desc: 'Stuck on a tricky Numerical or Reaction? Get instant step-by-step Urdu/English explanations 24/7 without waiting for tuition hours.',
+    iconColor: '#8B5CF1',
+    bgColor: '#F0E9FF',
+    tag: '10 Years Online',
+    title: 'Ten-Year Papers',
+    desc: 'Practice a decade of board papers in one place, organized by subject, chapter and board so you can spot repeated exam patterns.',
   },
   {
-    icon: Target,
-    iconColor: '#EF4444',
-    bgColor: '#FEE2E2',
-    tag: 'Real Exam Pressure',
-    title: 'Timed Mock Exams',
-    desc: 'Simulate exact board exam conditions with countdown timers, negative marking options, and automated instant marksheets.',
-  },
-  {
-    icon: BarChart2,
-    iconColor: '#10B981',
-    bgColor: '#D1FAE5',
-    tag: 'Weakness Radar',
-    title: 'Smart Learning Analytics',
-    desc: 'Intelligent AI insights highlight your weakest chapters and recommend exact practice sets to boost your score efficiently.',
-  },
-  {
-    icon: PlayCircle,
-    iconColor: '#3B82F6',
-    bgColor: '#DBEAFE',
-    tag: 'Bite-sized Videos',
-    title: 'Concept Video Lessons',
-    desc: 'High-quality 5-minute video explanations focusing on frequently tested board questions and exam secrets.',
+    icon: Brain,
+    iconColor: '#159A9C',
+    bgColor: '#DDF7F4',
+    tag: '24/7 Support',
+    title: 'AI Assistant',
+    desc: 'Ask questions in simple English or Urdu and get clear, step-by-step explanations whenever a concept feels difficult.',
   },
   {
     icon: BookOpen,
-    iconColor: '#D97706',
-    bgColor: '#FEF3C7',
-    tag: '10,000+ Questions',
-    title: 'Topic-wise MCQ Bank',
-    desc: 'Comprehensive chapter-wise question bank with conceptual hints, textbook page references, and memory tricks.',
+    iconColor: '#0861A8',
+    bgColor: '#E0F2FF',
+    tag: 'Practice Daily',
+    title: 'MCQs',
+    desc: 'Build confidence with topic-wise MCQs, instant answers, helpful hints and focused practice for every important chapter.',
+  },
+  {
+    icon: ClipboardList,
+    iconColor: '#B76F44',
+    bgColor: '#FFF0E8',
+    tag: 'Plan Your Prep',
+    title: 'Study Sheets',
+    desc: 'Use smart study sheets to organize your syllabus, track important topics and keep your daily preparation on course.',
+  },
+  {
+    icon: BarChart2,
+    iconColor: '#564B58',
+    bgColor: '#EEEAF0',
+    tag: 'Know Your Progress',
+    title: 'Smart Analysis',
+    desc: 'See your strengths, identify weak chapters and understand your progress with clear performance insights and recommendations.',
   },
 ];
 
 const Features = () => (
-  <section className="py-24 bg-amber-50/30 relative overflow-hidden" id="why-us">
+  <section className="py-24 bg-amber-50/30 relative overflow-hidden scroll-mt-24" id="features">
     <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
       
       {/* Section Header */}
@@ -84,7 +84,7 @@ const Features = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.45 }}
               whileHover={{ y: -6 }}
-              className="bg-white rounded-3xl p-7 border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl p-7 border border-[#DCE5EF] shadow-sm hover:shadow-[0_20px_44px_rgba(34,4,236,0.14)] hover:border-[#8B5CF1] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Top Row */}
@@ -95,13 +95,13 @@ const Features = () => (
                   >
                     <IconComp size={24} style={{ color: b.iconColor }} />
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider bg-gray-100 text-gray-600 px-3 py-1 rounded-full group-hover:bg-amber-100 group-hover:text-amber-800 transition-colors">
+                  <span className="text-[10px] font-black uppercase tracking-wider bg-[#F0EEF5] text-[#564B58] px-3 py-1 rounded-full group-hover:bg-[#E8E5FF] group-hover:text-[#2204EC] transition-colors">
                     {b.tag}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="font-black text-xl text-indigo-950 mb-3 group-hover:text-amber-600 transition-colors">
+                <h3 className="font-black text-xl text-indigo-950 mb-3 group-hover:text-[#2204EC] transition-colors">
                   {b.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
@@ -109,7 +109,7 @@ const Features = () => (
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-indigo-950 group-hover:text-amber-600">
+              <div className="pt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-indigo-950 group-hover:text-[#159A9C]">
                 <span>Explore Feature</span>
                 <ArrowUpRight size={16} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>

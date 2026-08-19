@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'For Students', href: '#features' },
+    { name: 'For Students', href: '#for-students' },
     { name: 'Features', href: '#features' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'About Us', href: '#about-us' },
@@ -41,8 +41,8 @@ const Navbar = () => {
             {/* Logo */}
             <a href="#" className="flex items-center gap-1 flex-shrink-0">
               <img src={logo} alt="PrepNation Logo" className="h-8 w-auto rounded-md" />
-              <span className="font-black text-xl tracking-tight" style={{ color: '#1E1B4B' }}>
-                Prep<span style={{ color: '#F59E0B' }}>Nation</span>
+              <span className="font-black text-xl tracking-tight" style={{ color: '#064B83' }}>
+                Prep<span style={{ color: '#0861A8' }}>Nation</span>
               </span>
             </a>
 
@@ -66,7 +66,7 @@ const Navbar = () => {
               </button>
               <button
                 className="text-white px-5 py-2 rounded-full font-bold text-sm transition-all hover:scale-105 shadow-md cursor-pointer"
-                style={{ background: '#F59E0B' }}
+                style={{ background: '#0861A8' }}
               >
                 Get Started Free
               </button>
@@ -93,7 +93,7 @@ const Navbar = () => {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-3 py-3 text-gray-700 hover:bg-amber-50 rounded-lg font-medium text-sm transition-colors"
+                    className="block px-3 py-3 text-gray-700 hover:bg-sky-50 rounded-lg font-medium text-sm transition-colors"
                   >
                     {link.name}
                   </a>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 <div className="pt-2">
                   <button
                     className="w-full text-white py-3 rounded-full font-bold text-sm"
-                    style={{ background: '#F59E0B' }}
+                    style={{ background: '#0861A8' }}
                   >
                     Get Started Free
                   </button>

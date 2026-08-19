@@ -6,7 +6,7 @@ const CallToAction = () => {
   const [done, setDone] = useState(false);
 
   return (
-    <section className="py-20 px-4" id="cta" style={{ background: '#FFFBEB' }}>
+    <section className="py-20 px-4" id="cta" style={{ background: '#EDF7FF' }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,19 +14,19 @@ const CallToAction = () => {
         transition={{ duration: 0.6 }}
         className="max-w-5xl mx-auto rounded-[3rem] px-10 py-16 text-center text-white relative overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #1E1B4B 0%, #4F46E5 60%, #7C3AED 100%)',
+          background: 'linear-gradient(135deg, #064B83 0%, #0861A8 60%, #3B91C8 100%)',
           boxShadow: '0 30px 80px rgba(30,27,75,0.4)',
         }}
       >
         {/* Decorative circles */}
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full opacity-10 pointer-events-none -translate-y-1/2 translate-x-1/2"
-          style={{ background: '#F59E0B' }} />
+          style={{ background: '#8FD3F4' }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10 pointer-events-none translate-y-1/2 -translate-x-1/2"
-          style={{ background: '#FCD34D' }} />
+          style={{ background: '#B9E4FF' }} />
 
         <div className="relative z-10">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-black tracking-widest uppercase mb-6"
-            style={{ background: '#F59E0B', color: '#1E1B4B' }}>
+            style={{ background: '#8FD3F4', color: '#064B83' }}>
             🚀 Coming Soon
           </span>
           <h2 className="text-3xl md:text-5xl font-black mb-5 leading-tight">
@@ -58,14 +58,14 @@ const CallToAction = () => {
                 transition={{ boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
                 type="submit"
                 className="px-8 py-4 rounded-full font-black text-sm flex-shrink-0"
-                style={{ background: '#F59E0B', color: '#1E1B4B' }}
+                style={{ background: '#8FD3F4', color: '#064B83' }}
               >
                 Join Waitlist
               </motion.button>
             </form>
           ) : (
             <div className="inline-block px-8 py-4 rounded-full font-bold text-sm"
-              style={{ background: 'rgba(245,158,11,0.2)', border: '1.5px solid #F59E0B', color: '#FCD34D' }}>
+              style={{ background: 'rgba(143,211,244,0.16)', border: '1.5px solid #8FD3F4', color: '#B9E4FF' }}>
               🎉 You're on the list! We'll notify you at launch.
             </div>
           )}

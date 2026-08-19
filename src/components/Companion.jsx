@@ -132,8 +132,8 @@ const Companion = () => (
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-4 px-8 py-4 rounded-full font-black text-gray-900 shadow-[0_8px_24px_rgba(245,158,11,0.4)]"
-            style={{ background: '#F59E0B' }}
+            className="mt-4 px-8 py-4 rounded-full font-black text-gray-900 shadow-[0_8px_24px_rgba(21,154,156,0.24)]"
+            style={{ background: '#8FD3F4' }}
           >
             Start Studying Now
           </motion.button>

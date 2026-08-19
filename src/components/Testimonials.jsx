@@ -8,21 +8,21 @@ const reviews = [
     board: 'Federal Board, Islamabad',
     text: "PrepNation changed how I study completely. The AI tutor cleared my physics doubts instantly — something my teacher couldn't do in 3 months!",
     initial: 'A',
-    bg: '#4F46E5',
+    bg: '#0861A8',
   },
   {
     name: 'Fatima Sheikh',
     board: 'Sindh Board, Karachi',
     text: "The past papers are extremely organized and explanations are super detailed. My score went from 72% to 91% in just one month of using PrepNation.",
     initial: 'F',
-    bg: '#10B981',
+    bg: '#3B91C8',
   },
   {
     name: 'Usman Malik',
     board: 'Cambridge O-Levels',
     text: "Best exam prep app in Pakistan, hands down. Topic-wise MCQs, timed tests, and analytics — everything a student needs in one place.",
     initial: 'U',
-    bg: '#F59E0B',
+    bg: '#59A9D8',
   },
 ];
 
@@ -45,7 +45,7 @@ const Testimonials = () => (
           </div>
           <div className="text-left">
             <div className="flex">
-              {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#F59E0B" color="#F59E0B" />)}
+              {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#159A9C" color="#159A9C" />)}
             </div>
             <p className="text-xs text-gray-400">4.9/5 from 3,200+ reviews</p>
           </div>
@@ -66,7 +66,7 @@ const Testimonials = () => (
             <Quote size={36} className="absolute top-5 right-5 opacity-8" style={{ color: '#FDE68A' }} />
 
             <div className="flex gap-1 mb-5">
-              {[...Array(5)].map((_, si) => <Star key={si} size={14} fill="#F59E0B" color="#F59E0B" />)}
+              {[...Array(5)].map((_, si) => <Star key={si} size={14} fill="#159A9C" color="#159A9C" />)}
             </div>
 
             <p className="text-gray-600 text-sm leading-relaxed mb-7">{r.text}</p>

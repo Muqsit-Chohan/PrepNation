@@ -1,13 +1,14 @@
-import { motion } from 'framer-motion';
-import { Play, BookOpen, GraduationCap, BookText, Sparkles, CheckCircle, Clock, Award } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play } from 'lucide-react';
 
-import mcqsImg from '../assets/mcqs.jpg';
-import aiImg from '../assets/ai.jpg';
-import pastpaperImg from '../assets/pastpaper.jpg';
-import mocktest from '../assets/mocktest.avif';
+import aiChatVideo from '../assets/video/aichat.mp4';
+import mcqsVideo from '../assets/video/mcqs.mp4';
+import mockExamsVideo from '../assets/video/mockexmas.mp4';
+import pastPapersVideo from '../assets/video/pastpapers.mp4';
 
 /* ── SVG Doodles ── */
-const Wave = ({ className, color = '#4F46E5', size = 70 }) => (
+const Wave = ({ className, color = '#0861A8', size = 70 }) => (
   <svg className={className} width={size} height={size * 0.4} viewBox="0 0 80 30" fill="none">
     <path d="M2 15 Q20 2 38 15 Q56 28 74 15" stroke={color} strokeWidth="3.5" strokeLinecap="round" fill="none" />
   </svg>
@@ -17,7 +18,7 @@ const Bookmark = ({ className, color = '#EF4444', size = 26 }) => (
     <path d="M3 2 H23 V34 L13 26 L3 34 Z" stroke={color} strokeWidth="2.5" fill={color + '25'} strokeLinejoin="round" />
   </svg>
 );
-const Sparkle = ({ className, color = '#F59E0B', size = 26 }) => (
+const Sparkle = ({ className, color = '#59A9D8', size = 26 }) => (
   <svg className={className} width={size} height={size} viewBox="0 0 26 26" fill="none">
     <path d="M13 2 L15 10.5 L23.5 8 L17 13 L23.5 18 L15 15.5 L13 24 L11 15.5 L2.5 18 L9 13 L2.5 8 L11 10.5 Z"
       stroke={color} strokeWidth="1.8" fill={color + '30'} strokeLinejoin="round" />
@@ -30,11 +31,27 @@ const Blob = ({ className, color }) => (
 );
 
 const Hero = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const slides = [
+    { video: mcqsVideo, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
+    { video: aiChatVideo, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
+    { video: pastPapersVideo, label: 'Past Papers', caption: 'Train with real board exams' },
+    { video: mockExamsVideo, label: 'Mock Exams', caption: 'Feel ready before exam day' },
+  ];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % slides.length);
+    }, 3200);
+    return () => window.clearInterval(timer);
+  }, [slides.length]);
+
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-34">
+    <section className="relative min-h-[760px] overflow-hidden bg-[#F6F4F8] pt-8 pb-24">
       {/* Background blobs */}
-      <Blob className="absolute -top-8 right-48 opacity-10 -z-0" color="#FCD34D" />
-      <Blob className="absolute bottom-16 left-12 opacity-10 -z-0" color="#A5B4FC" />
+      <Blob className="absolute -top-8 right-48 opacity-10 -z-0" color="#8B5CF1" />
+      <Blob className="absolute bottom-16 left-12 opacity-10 -z-0" color="#B9E4FF" />
+      <div className="pointer-events-none absolute -right-20 top-20 text-[clamp(7rem,21vw,19rem)] font-black leading-none tracking-[-.12em] text-[#06040F]/[.035]">ACE</div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -54,7 +71,7 @@ const Hero = () => {
             </div> */}
 
             <div className="relative mb-6">
-              <h1 className="text-5xl lg:text-6xl font-black leading-[1.07] tracking-tight" style={{ color: '#1E1B4B' }}>
+            <h1 className="text-5xl lg:text-6xl font-black leading-[1.07] tracking-tight" style={{ color: '#064B83' }}>
                 Pakistan's Smartest Way to{' '}
                 <span className="relative inline-block">
                   Ace Exams
@@ -64,7 +81,7 @@ const Hero = () => {
                   </svg>
                 </span>
               </h1>
-              <Sparkle className="absolute -right-4 top-4 hidden lg:block" color="#F59E0B" size={30} />
+              <Sparkle className="absolute -right-4 top-4 hidden lg:block" color="#159A9C" size={30} />
             </div>
 
             <p className="text-gray-500 text-md leading-relaxed mb-10 max-w-md">
@@ -76,20 +93,20 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 rounded-full font-black text-gray-900 text-base shadow-[0_8px_28px_rgba(245,158,11,0.45)] hover:shadow-[0_12px_36px_rgba(245,158,11,0.6)] transition-shadow cursor-pointer"
-                style={{ background: '#F59E0B' }}
+                className="px-8 py-4 rounded-full font-bold text-white text-base shadow-[0_8px_28px_rgba(8,97,168,0.22)] hover:shadow-[0_12px_36px_rgba(8,97,168,0.34)] transition-shadow cursor-pointer"
+                style={{ background: '#0861A8' }}
               >
                 Get Started Free
               </motion.button>
 
               <motion.button 
-                whileHover={{ scale: 1.05, color: '#F59E0B' }}
+                  whileHover={{ scale: 1.05, color: '#159A9C' }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-3 font-semibold text-gray-700 transition-colors group cursor-pointer"
               >
                 <span
                   className="w-12 h-12 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
-                  style={{ background: '#1E1B4B' }}
+                  style={{ background: '#064B83' }}
                 >
                   <Play size={15} fill="white" color="white" className="ml-0.5" />
                 </span>
@@ -98,158 +115,94 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Column — 2×2 Animated Grid with Background Images from assets */}
-          <div className="relative">
-            {/* Doodles */}
-            <Sparkle  className="absolute top-1/2 -left-5 z-20"  color="#10B981" size={20} />
+          {/* Right Column — cinematic mobile slider */}
+          <div className="relative flex min-h-[500px] items-center justify-center lg:min-h-[560px]">
+            <div className="absolute h-72 w-72 rounded-full bg-sky-200/50 blur-3xl" />
+            <div className="absolute -right-2 top-16 h-24 w-24 rounded-full bg-teal-200/70 blur-2xl" />
+            <Sparkle className="absolute left-8 top-16 z-20" color="#159A9C" size={22} />
 
-            {/* Custom Interactive 2x2 Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              
-              {/* Card 1: MCQ Bank (mcqs.jpg) */}
-              <motion.div
-                initial={{ opacity: 0, y: 25, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.55, delay: 0.15 }}
-                whileHover={{ y: -6, scale: 1.03 }}
-                className="relative overflow-hidden p-5 flex flex-col justify-between h-40 text-white shadow-xl group border-2 border-emerald-400/30 transform-gpu will-change-transform"
-                style={{ borderRadius: '28px 12px 28px 16px' }}
-              >
-                {/* Background Image with Zoom Animation */}
-                <motion.img 
-                  src={mcqsImg} 
-                  alt="MCQs Prep" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-500 ease-out group-hover:scale-110 transform-gpu will-change-transform"
-                />
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/95 via-emerald-900/60 to-emerald-800/40 z-10" />
+            <motion.div
+              animate={{ y: [0, -12, 0], rotate: [-5, -2, -5] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute left-0 top-24 z-20 hidden w-40 rounded-2xl border border-white/90 bg-white/80 p-3 shadow-[0_18px_40px_rgba(6,4,15,0.12)] backdrop-blur-md sm:block"
+            >
+              <div className="mb-3 flex items-center justify-between">
+                <span className="text-[9px] font-black uppercase tracking-wider text-[#564B58]">Daily streak</span>
+                <span className="text-lg">🔥</span>
+              </div>
+              <div className="flex items-end gap-1.5">
+                {[35, 52, 44, 68, 58, 86, 74].map((height, index) => (
+                  <span key={index} className="w-2 rounded-full bg-[#2204EC]" style={{ height: `${height / 3}px`, opacity: .35 + index * .09 }} />
+                ))}
+              </div>
+              <p className="mt-2 text-xs font-black text-[#06040F]">7 days on track</p>
+            </motion.div>
 
-                {/* Content */}
-                <div className="relative z-20 flex justify-between items-start">
-                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
-                    <BookOpen size={22} className="text-white" />
-                  </div> */}
-                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-emerald-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
-                    10M+ Solved
-                  </span>
+            <motion.div
+              animate={{ y: [0, 10, 0], rotate: [4, 1, 4] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: .6 }}
+              className="absolute bottom-28 right-0 z-20 hidden w-44 rounded-2xl border border-white/90 bg-[#06040F] p-4 text-white shadow-[0_20px_44px_rgba(6,4,15,0.2)] sm:block"
+            >
+              <p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#B9E4FF]">Your progress</p>
+              <div className="mt-3 flex items-center gap-3">
+                <div className="grid h-11 w-11 place-items-center rounded-full border-4 border-[#8B5CF1] text-xs font-black">82%</div>
+                <div><p className="text-xs font-bold">Exam ready</p><p className="mt-1 text-[10px] text-white/55">Keep going!</p></div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30, rotate: 5 }}
+              animate={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              whileHover={{ y: -8, rotate: -1 }}
+              className="relative z-10 w-[min(54vw,218px)] rounded-[2.5rem] border-[6px] border-slate-900 bg-slate-900 p-1.5 shadow-[0_22px_54px_rgba(8,75,131,0.25)]"
+            >
+              <div className="absolute -left-[9px] top-24 h-10 w-1 rounded-l-full bg-slate-800" />
+              <div className="absolute -right-[9px] top-28 h-16 w-1 rounded-r-full bg-slate-800" />
+              <div className="absolute left-1/2 top-2 z-30 flex h-5 w-24 -translate-x-1/2 items-center justify-end gap-2 rounded-full bg-slate-950 px-3">
+                <span className="h-1 w-6 rounded-full bg-slate-700" />
+                <span className="h-1.5 w-1.5 rounded-full bg-slate-700" />
+              </div>
+              <div className="relative aspect-[9/19] overflow-hidden rounded-[2.05rem] bg-sky-50">
+                <AnimatePresence mode="wait">
+                  <motion.video
+                    key={activeSlide}
+                    src={slides[activeSlide].video}
+                    aria-label={slides[activeSlide].label}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    initial={{ opacity: 0, scale: 1.08, x: 24 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.98, x: -24 }}
+                    transition={{ duration: 0.65, ease: 'easeInOut' }}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-transparent to-slate-950/80" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-sky-200">PrepNation</p>
+                  <h3 className="text-xl font-black leading-tight">{slides[activeSlide].label}</h3>
+                  <p className="mt-1 text-xs text-white/75">{slides[activeSlide].caption}</p>
                 </div>
-                
-                <div className="relative z-20">
-                  <div className="flex items-center gap-1.5 text-emerald-200 text-xs font-semibold mb-1">
-                    <CheckCircle size={13} className="text-emerald-400" /> Topic-wise MCQs
-                  </div>
-                  <h3 className="font-black text-lg leading-snug text-white">Chapter MCQ Bank</h3>
+                <div className="absolute left-4 right-4 top-5 flex gap-1">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.label}
+                      type="button"
+                      aria-label={`Show ${slide.label}`}
+                      onClick={() => setActiveSlide(index)}
+                      className={`h-1 flex-1 rounded-full transition-colors ${index === activeSlide ? 'bg-white' : 'bg-white/35'}`}
+                    />
+                  ))}
                 </div>
-              </motion.div>
+              </div>
+            </motion.div>
 
-              {/* Card 2: AI Doubt Solver (ai.jpg) */}
-              <motion.div
-                initial={{ opacity: 0, y: 25, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.55, delay: 0.3 }}
-                whileHover={{ y: -6, scale: 1.03 }}
-                className="relative overflow-hidden p-5 flex flex-col justify-between h-40 text-white shadow-xl group border-2 border-amber-400/30 transform-gpu will-change-transform"
-                style={{ borderRadius: '14px 28px 16px 28px' }}
-              >
-                {/* Background Image with Zoom Animation */}
-                <motion.img 
-                  src={aiImg} 
-                  alt="AI Tutor" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-500 ease-out group-hover:scale-110 transform-gpu will-change-transform"
-                />
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-amber-950/95 via-amber-900/60 to-amber-800/40 z-10" />
-
-                {/* Content */}
-                <div className="relative z-20 flex justify-between items-start">
-                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
-                    <Sparkles size={22} className="text-amber-300 animate-pulse" />
-                  </div> */}
-                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-amber-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
-                    24/7 Instant
-                  </span>
-                </div>
-
-                <div className="relative z-20">
-                  <div className="flex items-center gap-1.5 text-amber-200 text-xs font-semibold mb-1">
-                    <Sparkles size={13} className="text-amber-300" /> Smart Assistant
-                  </div>
-                  <h3 className="font-black text-lg leading-snug text-white">AI Study Partner</h3>
-                </div>
-              </motion.div>
-
-              {/* Card 3: Past Papers (pastpaper.jpg) */}
-              <motion.div
-                initial={{ opacity: 0, y: 25, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.55, delay: 0.45 }}
-                whileHover={{ y: -6, scale: 1.03 }}
-                className="relative overflow-hidden p-5 flex flex-col justify-between h-40 text-white shadow-xl group border-2 border-blue-400/30 transform-gpu will-change-transform"
-                style={{ borderRadius: '16px 28px 24px 14px' }}
-              >
-                {/* Background Image with Zoom Animation */}
-                <motion.img 
-                  src={pastpaperImg} 
-                  alt="Past Papers" 
-                  className="absolute inset-0 w-full h-full object-cover object-[center_top] z-0 transition-transform duration-500 ease-out group-hover:scale-110 transform-gpu will-change-transform"
-                />
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/60 to-blue-800/40 z-10" />
-
-                {/* Content */}
-                <div className="relative z-20 flex justify-between items-start">
-                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
-                    <BookText size={22} className="text-white" />
-                  </div> */}
-                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-blue-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
-                    10 Years
-                  </span>
-                </div>
-
-                <div className="relative z-20">
-                  <div className="flex items-center gap-1.5 text-blue-200 text-xs font-semibold mb-1">
-                    <Award size={13} className="text-blue-300" /> FBISE &amp; BISE
-                  </div>
-                  <h3 className="font-black text-lg leading-snug text-white">Solved Past Papers</h3>
-                </div>
-              </motion.div>
-
-              {/* Card 4: Timed Mock Exam (exam.jpg) */}
-              <motion.div
-                initial={{ opacity: 0, y: 25, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.55, delay: 0.6 }}
-                whileHover={{ y: -6, scale: 1.03 }}
-                className="relative overflow-hidden p-5 flex flex-col justify-between h-40 text-white shadow-xl group border-2 border-rose-400/30 transform-gpu will-change-transform"
-                style={{ borderRadius: '28px 16px 14px 28px' }}
-              >
-                {/* Background Image with Zoom Animation */}
-                <motion.img 
-                  src={mocktest} 
-                  alt="Mock Exam" 
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-500 ease-out group-hover:scale-110 transform-gpu will-change-transform"
-                />
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-rose-950/95 via-rose-900/60 to-rose-800/40 z-10" />
-
-                {/* Content */}
-                <div className="relative z-20 flex justify-between items-end">
-                  {/* <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center border border-white/30">
-                    <Clock size={22} className="text-white" />
-                  </div> */}
-                  <span className="absolute top-0 right-0 text-[10px] font-black uppercase tracking-wider bg-rose-600/90 text-white px-2.5 py-1 rounded-full border border-white/20">
-                    Real Exam
-                  </span>
-                </div>
-
-                <div className="relative z-20">
-                  <div className="flex items-center gap-1.5 text-rose-200 text-xs font-semibold mb-1">
-                    <GraduationCap size={13} className="text-rose-300" /> Exam Simulator
-                  </div>
-                  <h3 className="font-black text-lg leading-snug text-white">Board Mock Tests</h3>
-                </div>
-              </motion.div>
-
+            <div className="absolute bottom-3 left-1/2 z-20 w-48 -translate-x-1/2 rounded-2xl border border-white/80 bg-white/85 px-3 py-2.5 text-center shadow-[0_10px_24px_rgba(22,78,112,0.14)] backdrop-blur-md">
+              <p className="text-xs font-black text-[#064B83]">One app. Every advantage.</p>
+              <p className="mt-1 text-[10px] font-medium text-slate-500">Built for Pakistan's board exams</p>
             </div>
           </div>
 

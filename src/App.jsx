@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-noise bg-gray-50/50">
+    <div className="min-h-screen bg-noise bg-sky-50/40">
       <AnimatedCursor />
       <Navbar />
       <main>
@@ -57,10 +57,10 @@ function App() {
       <div
         id="announcement"
         className="px-6 py-4 text-center text-white scroll-mt-24"
-        style={{ background: '#1E1B4B' }}
+        style={{ background: '#064B83' }}
       >
         🎉 Launching on Google Play &amp; App Store soon!{' '}
-        <a href="#cta" className="underline font-bold transition-all hover:opacity-80" style={{ color: '#FCD34D' }}>
+        <a href="#cta" className="underline font-bold transition-all hover:opacity-80" style={{ color: '#B9E4FF' }}>
           Join the waitlist &amp; get 30 days Premium FREE
         </a>
       </div>

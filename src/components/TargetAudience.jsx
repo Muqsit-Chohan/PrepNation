@@ -100,7 +100,7 @@ const TargetAudience = () => {
     : subjects.filter(s => s.cat === activeTab);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="features">
+    <section className="py-24 bg-white relative overflow-hidden" id="for-students">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Header */}
@@ -153,7 +153,7 @@ const TargetAudience = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
                   whileHover={{ y: -6 }}
-                  className="bg-white border border-gray-200/80 rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-amber-300/80 transition-all duration-300 group"
+                  className="bg-white border border-[#DCE5EF] rounded-3xl p-6 flex flex-col justify-between shadow-sm hover:shadow-[0_18px_40px_rgba(21,154,156,0.16)] hover:border-[#159A9C] hover:bg-[#FBFCFF] transition-all duration-300 group"
                 >
                   <div>
                     {/* Top Row: Icon + MCQ badge */}
@@ -164,13 +164,13 @@ const TargetAudience = () => {
                       >
                         <IconComp size={24} style={{ color: sub.color }} />
                       </div>
-                      <span className="text-[11px] font-black text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full group-hover:bg-amber-100 group-hover:text-amber-800 transition-colors">
+                      <span className="text-[11px] font-black text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full group-hover:bg-[#DDF7F4] group-hover:text-[#064B83] transition-colors">
                         {sub.count}
                       </span>
                     </div>
 
                     {/* Subject info */}
-                    <h3 className="font-black text-lg text-indigo-950 group-hover:text-amber-600 transition-colors mb-1">
+                    <h3 className="font-black text-lg text-indigo-950 group-hover:text-[#2204EC] transition-colors mb-1">
                       {sub.name}
                     </h3>
                     <p className="text-xs text-gray-400 font-medium leading-relaxed">
@@ -179,7 +179,7 @@ const TargetAudience = () => {
                   </div>
 
                   {/* Bottom Action Link */}
-                  <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-indigo-950 group-hover:text-amber-600">
+                  <div className="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-indigo-950 group-hover:text-[#159A9C] transition-colors">
                     <span className="flex items-center gap-1">
                       <CheckCircle2 size={13} className="text-emerald-500" /> Syllabus Ready
                     </span>

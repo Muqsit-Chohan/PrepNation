@@ -1,16 +1,26 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, GraduationCap, Laptop, ClipboardCheck, ShieldCheck, Award, Sparkles, CheckCircle2 } from 'lucide-react';
-import boardMatchedImage from '../assets/BoardMatched.jpg';
-import toppersChoiceImage from '../assets/ToppersChoice.jpg';
-import smartAiRadarImage from '../assets/SmartAIRadar.jpg';
-import offlineDownloadsImage from '../assets/OfflineDownloads.jpg';
+import { Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import aiChatVideo from '../assets/video/aichat.mp4';
+import examVideo from '../assets/video/exam.mp4';
+import notesVideo from '../assets/video/notes.mp4';
+import topperVideo from '../assets/video/topper.mp4';
 
-const WhyChooseUs = () => (
+const WhyChooseUs = () => {
+  const [activeVideo, setActiveVideo] = useState(0);
+  const videos = [examVideo, aiChatVideo, notesVideo, topperVideo];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setActiveVideo((current) => (current + 1) % videos.length), 3200);
+    return () => window.clearInterval(timer);
+  }, [videos.length]);
+
+  return (
   <section id="about-us" className="py-24 overflow-hidden bg-white relative scroll-mt-24">
     <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Left: Interactive Feature Cards Grid & Experience Badge */}
+        {/* Left: Animated app phone & experience badge */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -18,73 +28,53 @@ const WhyChooseUs = () => (
           transition={{ duration: 0.7 }}
           className="relative"
         >
-          <div className="grid grid-cols-2 gap-5">
-            {[
-              { 
-                Icon: BookOpen, 
-                image: boardMatchedImage,
-                imageClass: 'object-[center_45%]',
-                bg: 'linear-gradient(135deg, rgba(252, 211, 77, 0.72) 0%, rgba(245, 158, 11, 0.88) 100%)', 
-                tall: true, 
-                title: 'Board Matched', 
-                desc: '100% FBISE & Provincial' 
-              },
-              { 
-                Icon: GraduationCap, 
-                image: toppersChoiceImage,
-                imageClass: 'object-[center_1%] ',
-                bg: 'linear-gradient(135deg, rgba(129, 140, 248, 0.72) 0%, rgba(79, 70, 229, 0.88) 100%)', 
-                tall: false, 
-                title: 'Toppers Choice', 
-                desc: '95%+ Average Score' 
-              },
-              { 
-                Icon: ClipboardCheck, 
-                image: smartAiRadarImage,
-                imageClass: 'object-[center_1%]',
-                bg: 'linear-gradient(135deg, rgba(52, 211, 153, 0.72) 0%, rgba(5, 150, 105, 0.88) 100%)', 
-                tall: false, 
-                title: 'Smart AI Radar', 
-                desc: 'Weakness Tracking' 
-              },
-              { 
-                Icon: Laptop, 
-                image: offlineDownloadsImage,
-                imageClass: 'object-[center_0%]',
-                bg: 'linear-gradient(135deg, rgba(248, 113, 113, 0.72) 0%, rgba(220, 38, 38, 0.88) 100%)', 
-                tall: true, 
-                title: 'Offline Downloads', 
-                desc: 'Zero Data Mode' 
-              },
-            ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                whileHover={{ scale: 1.03, y: -4 }}
-                className="rounded-3xl p-6 shadow-xl flex flex-col justify-between relative overflow-hidden text-white border border-white/20" 
-                style={{
-                  height: item.tall ? '250px' : '190px',
-                }}
-              >
-                <img
-                  src={item.image}
-                  alt=""
-                  aria-hidden="true"
-                  className={`absolute inset-0 w-full h-full object-cover ${item.imageClass}`}
+          <div className="relative flex min-h-[430px] items-center justify-center">
+            <div className="absolute h-72 w-72 rounded-full bg-[#B9E4FF]/70 blur-3xl" />
+            <motion.div
+              animate={{ y: [0, -9, 0], rotate: [-4, -1, -4] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute left-0 top-20 z-20 hidden w-40 rounded-2xl border border-white/90 bg-white/90 p-3 shadow-[0_16px_36px_rgba(34,4,236,0.14)] backdrop-blur-md sm:block"
+            >
+              <p className="text-[9px] font-black uppercase tracking-[.14em] text-[#564B58]">Board match</p>
+              <p className="mt-2 text-sm font-bold text-[#06040F]">100% syllabus aligned</p>
+              <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#E8E5FF]"><div className="h-full w-[92%] rounded-full bg-[#2204EC]" /></div>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 9, 0], rotate: [4, 1, 4] }}
+              transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: .5 }}
+              className="absolute bottom-20 right-0 z-20 hidden w-44 rounded-2xl bg-[#064B83] p-4 text-white shadow-[0_18px_40px_rgba(6,75,131,0.22)] sm:block"
+            >
+              <p className="text-[9px] font-bold uppercase tracking-[.16em] text-[#B9E4FF]">AI insights</p>
+              <p className="mt-2 text-sm font-bold">Weaknesses found</p>
+              <p className="mt-1 text-[10px] text-white/65">3 chapters ready to improve</p>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ y: -8, rotate: -1 }}
+              className="relative z-10 w-[min(58vw,235px)] rounded-[2.5rem] border-[7px] border-slate-900 bg-slate-900 p-1.5 shadow-[0_25px_60px_rgba(6,4,15,0.22)]"
+            >
+              <div className="absolute left-1/2 top-2 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-slate-950" />
+              <div className="relative aspect-[9/18.5] overflow-hidden rounded-[2rem] bg-[#E8E5FF]">
+                <motion.video
+                  key={activeVideo}
+                  src={videos[activeVideo]}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  initial={{ opacity: 0, scale: 1.06 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.55 }}
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
-                <div className="absolute inset-0" style={{ background: item.bg }} />
-
-                <div className="relative z-10 w-11 h-11 rounded-2xl bg-white/25 backdrop-blur-md flex items-center justify-center shadow-sm">
-                  <item.Icon size={22} className="text-white" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#064B83]/15 via-transparent to-[#06040F]/80" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#B9E4FF]">PrepNation app</p>
+                  <h3 className="mt-1 text-lg font-bold">Learn. Practice. Improve.</h3>
                 </div>
-
-                <div className="relative z-10">
-                  <span className="text-[10px] font-black uppercase tracking-wider bg-black/20 text-white px-3 py-1 rounded-full backdrop-blur-sm inline-block mb-2">
-                    {item.desc}
-                  </span>
-                  <h4 className="font-black text-lg leading-snug">{item.title}</h4>
-                </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
           </div>
 
           {/* Floating Experience Badge */}
@@ -96,11 +86,11 @@ const WhyChooseUs = () => (
             className="mt-6 bg-indigo-950 text-white rounded-3xl p-6 shadow-2xl border border-indigo-900 flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500 flex items-center justify-center text-gray-900 font-black shadow-lg">
+              <div className="w-12 h-12 rounded-2xl bg-sky-300 flex items-center justify-center text-gray-900 font-black shadow-lg">
                 <Award size={26} />
               </div>
               <div>
-                <p className="font-black text-xl text-amber-400">21+ Years Combined</p>
+                <p className="font-black text-xl text-sky-300">21+ Years Combined</p>
                 <p className="text-xs text-indigo-200 font-medium">Educational Curriculum Expertise</p>
               </div>
             </div>
@@ -151,8 +141,8 @@ const WhyChooseUs = () => (
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full font-black text-gray-900 shadow-[0_8px_24px_rgba(245,158,11,0.4)]"
-            style={{ background: '#F59E0B' }}
+            className="px-8 py-4 rounded-full font-black text-gray-900 shadow-[0_8px_24px_rgba(21,154,156,0.24)]"
+            style={{ background: '#8FD3F4' }}
           >
             Join 50,000+ Students Today
           </motion.button>
@@ -161,6 +151,7 @@ const WhyChooseUs = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default WhyChooseUs;
