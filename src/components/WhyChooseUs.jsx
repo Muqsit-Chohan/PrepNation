@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
             <motion.div
               animate={{ y: [0, -9, 0], rotate: [-4, -1, -4] }}
               transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute left-0 top-20 z-20 hidden w-40 rounded-2xl border border-white/90 bg-white/90 p-3 shadow-[0_16px_36px_rgba(34,4,236,0.14)] backdrop-blur-md sm:block"
+              className="absolute left-0 top-20 z-20 w-28 rounded-2xl border border-white/90 bg-white/90 p-2 shadow-[0_16px_36px_rgba(34,4,236,0.14)] backdrop-blur-md sm:w-40 sm:p-3"
             >
               <p className="text-[9px] font-black uppercase tracking-[.14em] text-[#564B58]">Board match</p>
               <p className="mt-2 text-sm font-bold text-[#06040F]">100% syllabus aligned</p>
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
             <motion.div
               animate={{ y: [0, 9, 0], rotate: [4, 1, 4] }}
               transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: .5 }}
-              className="absolute bottom-20 right-0 z-20 hidden w-44 rounded-2xl bg-[#064B83] p-4 text-white shadow-[0_18px_40px_rgba(6,75,131,0.22)] sm:block"
+              className="absolute bottom-20 right-0 z-20 w-32 rounded-2xl bg-[#064B83] p-2.5 text-white shadow-[0_18px_40px_rgba(6,75,131,0.22)] sm:w-44 sm:p-4"
             >
               <p className="text-[9px] font-bold uppercase tracking-[.16em] text-[#B9E4FF]">AI insights</p>
               <p className="mt-2 text-sm font-bold">Weaknesses found</p>

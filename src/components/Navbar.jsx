@@ -30,18 +30,18 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 sm:px-6">
       <nav
-        className={`pointer-events-auto w-full transition-all duration-300 ease-out transform-gpu ${
+        className={`pointer-events-auto w-full max-md:mt-2 max-md:rounded-2xl max-md:bg-white/95 max-md:py-1 max-md:shadow-md max-md:border max-md:border-gray-200/80 transition-all duration-300 ease-out transform-gpu ${
           isScrolled
             ? 'mt-3 max-w-5xl bg-white/95 shadow-lg rounded-[2rem] py-1 border border-gray-200/80'
             : 'mt-0 max-w-7xl bg-transparent py-3 border-transparent'
         }`}
       >
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14">
+        <div className="mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-12 sm:h-14">
             {/* Logo */}
             <a href="#" className="flex items-center gap-1 flex-shrink-0">
-              <img src={logo} alt="PrepNation Logo" className="h-8 w-auto rounded-md" />
-              <span className="font-black text-xl tracking-tight" style={{ color: '#064B83' }}>
+              <img src={logo} alt="PrepNation Logo" className="h-7 sm:h-8 w-auto rounded-md" />
+              <span className="font-black text-lg sm:text-xl tracking-tight" style={{ color: '#064B83' }}>
                 Prep<span style={{ color: '#0861A8' }}>Nation</span>
               </span>
             </a>
@@ -73,7 +73,11 @@ const Navbar = () => {
             </div>
 
             {/* Mobile toggle */}
-            <button className="md:hidden text-gray-600" onClick={() => setIsOpen(!isOpen)}>
+            <button
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              className="md:hidden grid h-10 w-10 place-items-center rounded-xl text-gray-700 hover:bg-sky-50"
+              onClick={() => setIsOpen(!isOpen)}
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -85,7 +89,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t border-gray-100 overflow-hidden rounded-b-[2rem]"
+              className="md:hidden max-h-[calc(100vh-5rem)] overflow-y-auto bg-white border-t border-gray-100 rounded-b-[1.5rem]"
             >
               <div className="px-4 py-4 space-y-1">
                 {navLinks.map((link) => (

@@ -49,7 +49,7 @@ const Hero = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative min-h-[760px] overflow-hidden bg-[#F6F4F8] pt-8 pb-24">
+    <section className="relative min-h-[760px] overflow-hidden bg-[#F6F4F8] pt-28 sm:pt-32 lg:pt-8 pb-24">
       {/* Background blobs */}
       <Blob className="absolute -top-8 right-48 opacity-10 -z-0" color="#8B5CF1" />
       <Blob className="absolute bottom-16 left-12 opacity-10 -z-0" color="#B9E4FF" />
@@ -73,7 +73,7 @@ const Hero = () => {
             </div> */}
 
             <div className="relative mb-6">
-            <h1 className="text-5xl lg:text-6xl font-black leading-[1.07] tracking-tight" style={{ color: '#064B83' }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight" style={{ color: '#064B83' }}>
                 Pakistan's Smartest Way to{' '}
                 <span className="relative inline-block">
                   Ace Exams
@@ -125,7 +125,7 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [-5, -2, -5] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute left-0 top-24 z-20 hidden w-40 rounded-2xl border border-white/90 bg-white/80 p-3 shadow-[0_18px_40px_rgba(6,4,15,0.12)] backdrop-blur-md sm:block"
+              className="absolute left-0 top-24 z-20 w-28 rounded-2xl border border-white/90 bg-white/80 p-2 shadow-[0_18px_40px_rgba(6,4,15,0.12)] backdrop-blur-md sm:w-40 sm:p-3"
             >
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-[9px] font-black uppercase tracking-wider text-[#564B58]">Daily streak</span>
@@ -142,7 +142,7 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0], rotate: [4, 1, 4] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: .6 }}
-              className="absolute bottom-28 right-0 z-20 hidden w-44 rounded-2xl border border-white/90 bg-[#06040F] p-4 text-white shadow-[0_20px_44px_rgba(6,4,15,0.2)] sm:block"
+              className="absolute bottom-28 right-0 z-20 w-32 rounded-2xl border border-white/90 bg-[#06040F] p-2.5 text-white shadow-[0_20px_44px_rgba(6,4,15,0.2)] sm:w-44 sm:p-4"
             >
               <p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#B9E4FF]">Your progress</p>
               <div className="mt-3 flex items-center gap-3">

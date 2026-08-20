@@ -3,9 +3,9 @@ import logo from '../assets/logo.png';
 
 const Footer = () => {
   const links = {
-    Company: [['About Us', '#about-us'], ['Careers', 'mailto:support@prepnation.pk?subject=Careers%20at%20PrepNation'], ['Blog', '#features'], ['Contact', '#announcement']],
+    Company: [['About Us', '#about-us'], ['Careers', 'mailto:dreambyte.space@gmail.com?subject=Careers%20at%20PrepNation'], ['Blog', '#features'], ['Contact', '#announcement']],
     Resources: [['Past Papers', '#for-students'], ['Mock Exams', '#for-students'], ['Study Guides', '#features'], ['Video Library', '#features']],
-    Support: [['Help Center', 'mailto:support@prepnation.pk?subject=PrepNation%20Help'], ['Terms of Service', '#announcement'], ['Privacy Policy', '#announcement'], ['FAQ', '#features']],
+    Support: [['Help Center', 'mailto:dreambyte.space@gmail.com?subject=PrepNation%20Help'], ['Terms of Service', '#announcement'], ['Privacy Policy', '#announcement'], ['FAQ', '#features']],
   };
 
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
             <div className="flex gap-4 text-white">
               {[
                 [Globe, 'https://prepnation.pk'],
-                [MessageCircle, 'https://wa.me/923001234567'],
+                [MessageCircle, 'https://wa.me/923102110584'],
                 [Camera, 'https://www.instagram.com/'],
                 [BriefcaseBusiness, 'https://www.linkedin.com/'],
               ].map(([Icon, href], i) => (
@@ -59,7 +59,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-2 text-white text-sm">
             <Mail size={14} />
-            <a href="mailto:support@prepnation.pk" className="hover:text-white transition-colors">support@prepnation.pk</a>
+            <a href="mailto:support@prepnation.pk" className="hover:text-white transition-colors">dreambyte.space@gmail.com</a>
           </div>
         </div>
       </div>
