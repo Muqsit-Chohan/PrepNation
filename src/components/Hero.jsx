@@ -7,7 +7,6 @@ import aiChatVideo from '../assets/Video/aichat.mp4';
 import mcqsVideo from '../assets/Video/mcqs.mp4';
 import mockExamsVideo from '../assets/Video/mockexmas.mp4';
 import pastPapersVideo from '../assets/Video/pastpapers.mp4';
-import videoPoster from '../assets/logo.png';
 
 /* ── SVG Doodles ── */
 const Wave = ({ className, color = '#0861A8', size = 70 }) => (
@@ -35,10 +34,10 @@ const Blob = ({ className, color }) => (
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const slides = [
-    { video: mcqsVideo, poster: videoPoster, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
-    { video: aiChatVideo, poster: videoPoster, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
-    { video: pastPapersVideo, poster: videoPoster, label: 'Past Papers', caption: 'Train with real board exams' },
-    { video: mockExamsVideo, poster: videoPoster, label: 'Mock Exams', caption: 'Feel ready before exam day' },
+    { video: mcqsVideo, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
+    { video: aiChatVideo, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
+    { video: pastPapersVideo, label: 'Past Papers', caption: 'Train with real board exams' },
+    { video: mockExamsVideo, label: 'Mock Exams', caption: 'Feel ready before exam day' },
   ];
 
   useEffect(() => {
@@ -176,7 +175,6 @@ const Hero = () => {
                   >
                     <LazyVideo
                       src={slides[activeSlide].video}
-                      poster={slides[activeSlide].poster}
                       aria-label={slides[activeSlide].label}
                       autoPlay
                       muted

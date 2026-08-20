@@ -5,13 +5,15 @@ import { useEffect, useRef, useState } from 'react';
 const LazyVideo = ({ src, poster, className, ...props }) => {
   const videoRef = useRef(null);
   const [isNearViewport, setIsNearViewport] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || isNearViewport) return undefined;
+    if (!video) return undefined;
 
     if (!('IntersectionObserver' in window)) {
       setIsNearViewport(true);
+      setIsVisible(true);
       return undefined;
     }
 
@@ -19,19 +21,22 @@ const LazyVideo = ({ src, poster, className, ...props }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsNearViewport(true);
-          observer.disconnect();
         }
+        setIsVisible(entry.isIntersecting);
       },
       { rootMargin: '300px 0px' },
     );
 
     observer.observe(video);
     return () => observer.disconnect();
-  }, [isNearViewport]);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !isNearViewport) return undefined;
+    if (!video || !isNearViewport || !isVisible) {
+      video?.pause();
+      return undefined;
+    }
 
     // Explicitly restart the new source when a carousel reuses this element.
     video.load();
@@ -39,7 +44,7 @@ const LazyVideo = ({ src, poster, className, ...props }) => {
     playPromise?.catch(() => {});
 
     return () => video.pause();
-  }, [src, isNearViewport]);
+  }, [src, isNearViewport, isVisible]);
 
   return (
     <video

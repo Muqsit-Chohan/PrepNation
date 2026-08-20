@@ -6,15 +6,14 @@ import aiChatVideo from '../assets/Video/aichat.mp4';
 import examVideo from '../assets/Video/exam.mp4';
 import notesVideo from '../assets/Video/notes.mp4';
 import topperVideo from '../assets/Video/topper.mp4';
-import videoPoster from '../assets/logo.png';
 
 const WhyChooseUs = () => {
   const [activeVideo, setActiveVideo] = useState(0);
   const videos = [
-    { src: examVideo, poster: videoPoster },
-    { src: aiChatVideo, poster: videoPoster },
-    { src: notesVideo, poster: videoPoster },
-    { src: topperVideo, poster: videoPoster },
+    { src: examVideo },
+    { src: aiChatVideo },
+    { src: notesVideo },
+    { src: topperVideo },
   ];
 
   useEffect(() => {
@@ -72,7 +71,6 @@ const WhyChooseUs = () => {
                 >
                   <LazyVideo
                     src={videos[activeVideo].src}
-                    poster={videos[activeVideo].poster}
                     autoPlay
                     muted
                     loop
