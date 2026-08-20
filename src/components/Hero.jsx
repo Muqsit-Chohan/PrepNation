@@ -5,7 +5,7 @@ import { Play } from 'lucide-react';
 import aiTutorImage from '../assets/aitutor.jpg';
 import examImage from '../assets/exam.jpg';
 import mcqsImage from '../assets/mcqs.jpg';
-import papersImage from '../assets/papers.jpg';
+import pastPaperImage from '../assets/pastpaper.jpg';
 
 /* ── SVG Doodles ── */
 const Wave = ({ className, color = '#0861A8', size = 70 }) => (
@@ -33,7 +33,7 @@ const Blob = ({ className, color }) => (
 const slides = [
   { image: mcqsImage, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
   { image: aiTutorImage, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
-  { image: papersImage, label: 'Past Papers', caption: 'Train with real board exams' },
+  { image: pastPaperImage, label: 'Past Papers', caption: 'Train with real board exams' },
   { image: examImage, label: 'Mock Exams', caption: 'Feel ready before exam day' },
 ];
 
