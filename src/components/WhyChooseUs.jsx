@@ -6,19 +6,24 @@ import examImage from '../assets/exam.jpg';
 import mcqsImage from '../assets/mcqs.jpg';
 import papersImage from '../assets/papers.jpg';
 
+const images = [
+  { src: examImage },
+  { src: aiTutorImage },
+  { src: mcqsImage },
+  { src: papersImage },
+];
+
 const WhyChooseUs = () => {
   const [activeVideo, setActiveVideo] = useState(0);
-  const images = [
-    { src: examImage },
-    { src: aiTutorImage },
-    { src: mcqsImage },
-    { src: papersImage },
-  ];
 
   useEffect(() => {
+    // Preload the next image so the carousel never waits during a switch.
+    const nextImage = new Image();
+    nextImage.src = images[(activeVideo + 1) % images.length].src;
+
     const timer = window.setInterval(() => setActiveVideo((current) => (current + 1) % images.length), 3200);
     return () => window.clearInterval(timer);
-  }, [images.length]);
+  }, [activeVideo]);
 
   return (
   <section id="about-us" className="py-24 overflow-hidden bg-white relative scroll-mt-24">
@@ -71,7 +76,8 @@ const WhyChooseUs = () => {
                   <img
                     src={images[activeVideo].src}
                     alt="PrepNation app preview"
-                    loading="lazy"
+                    loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     autoPlay
                     muted

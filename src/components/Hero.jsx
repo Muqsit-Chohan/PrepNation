@@ -30,21 +30,26 @@ const Blob = ({ className, color }) => (
   </svg>
 );
 
+const slides = [
+  { image: mcqsImage, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
+  { image: aiTutorImage, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
+  { image: papersImage, label: 'Past Papers', caption: 'Train with real board exams' },
+  { image: examImage, label: 'Mock Exams', caption: 'Feel ready before exam day' },
+];
+
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const slides = [
-    { image: mcqsImage, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
-    { image: aiTutorImage, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
-    { image: papersImage, label: 'Past Papers', caption: 'Train with real board exams' },
-    { image: examImage, label: 'Mock Exams', caption: 'Feel ready before exam day' },
-  ];
 
   useEffect(() => {
+    // Warm the next slide before the timer switches to it.
+    const nextImage = new Image();
+    nextImage.src = slides[(activeSlide + 1) % slides.length].image;
+
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % slides.length);
     }, 3200);
     return () => window.clearInterval(timer);
-  }, [slides.length]);
+  }, [activeSlide]);
 
   return (
     <section className="relative min-h-[760px] overflow-hidden bg-[#F6F4F8] pt-28 sm:pt-32 lg:pt-8 pb-24">
@@ -176,7 +181,8 @@ const Hero = () => {
                       src={slides[activeSlide].image}
                       aria-label={slides[activeSlide].label}
                       alt={slides[activeSlide].label}
-                      loading={activeSlide === 0 ? 'eager' : 'lazy'}
+                      loading="eager"
+                      fetchPriority="high"
                       decoding="async"
                       className="h-full w-full object-cover"
                     />
