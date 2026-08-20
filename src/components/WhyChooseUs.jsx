@@ -1,14 +1,21 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import LazyVideo from './LazyVideo';
 import aiChatVideo from '../assets/Video/aichat.mp4';
 import examVideo from '../assets/Video/exam.mp4';
 import notesVideo from '../assets/Video/notes.mp4';
 import topperVideo from '../assets/Video/topper.mp4';
+import videoPoster from '../assets/logo.png';
 
 const WhyChooseUs = () => {
   const [activeVideo, setActiveVideo] = useState(0);
-  const videos = [examVideo, aiChatVideo, notesVideo, topperVideo];
+  const videos = [
+    { src: examVideo, poster: videoPoster },
+    { src: aiChatVideo, poster: videoPoster },
+    { src: notesVideo, poster: videoPoster },
+    { src: topperVideo, poster: videoPoster },
+  ];
 
   useEffect(() => {
     const timer = window.setInterval(() => setActiveVideo((current) => (current + 1) % videos.length), 3200);
@@ -56,18 +63,23 @@ const WhyChooseUs = () => {
             >
               <div className="absolute left-1/2 top-2 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-slate-950" />
               <div className="relative aspect-[9/18.5] overflow-hidden rounded-[2rem] bg-[#E8E5FF]">
-                <motion.video
+                <motion.div
                   key={activeVideo}
-                  src={videos[activeVideo]}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
                   initial={{ opacity: 0, scale: 1.06 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.55 }}
                   className="absolute inset-0 h-full w-full object-cover"
-                />
+                >
+                  <LazyVideo
+                    src={videos[activeVideo].src}
+                    poster={videos[activeVideo].poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover"
+                  />
+                </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-b from-[#064B83]/15 via-transparent to-[#06040F]/80" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                   <p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#B9E4FF]">PrepNation app</p>

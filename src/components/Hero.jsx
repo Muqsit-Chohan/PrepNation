@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
+import LazyVideo from './LazyVideo';
 
 import aiChatVideo from '../assets/Video/aichat.mp4';
 import mcqsVideo from '../assets/Video/mcqs.mp4';
 import mockExamsVideo from '../assets/Video/mockexmas.mp4';
 import pastPapersVideo from '../assets/Video/pastpapers.mp4';
+import videoPoster from '../assets/logo.png';
 
 /* ── SVG Doodles ── */
 const Wave = ({ className, color = '#0861A8', size = 70 }) => (
@@ -33,10 +35,10 @@ const Blob = ({ className, color }) => (
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const slides = [
-    { video: mcqsVideo, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
-    { video: aiChatVideo, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
-    { video: pastPapersVideo, label: 'Past Papers', caption: 'Train with real board exams' },
-    { video: mockExamsVideo, label: 'Mock Exams', caption: 'Feel ready before exam day' },
+    { video: mcqsVideo, poster: videoPoster, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
+    { video: aiChatVideo, poster: videoPoster, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
+    { video: pastPapersVideo, poster: videoPoster, label: 'Past Papers', caption: 'Train with real board exams' },
+    { video: mockExamsVideo, poster: videoPoster, label: 'Mock Exams', caption: 'Feel ready before exam day' },
   ];
 
   useEffect(() => {
@@ -164,20 +166,25 @@ const Hero = () => {
               </div>
               <div className="relative aspect-[9/19] overflow-hidden rounded-[2.05rem] bg-sky-50">
                 <AnimatePresence mode="wait">
-                  <motion.video
+                  <motion.div
                     key={activeSlide}
-                    src={slides[activeSlide].video}
-                    aria-label={slides[activeSlide].label}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
                     initial={{ opacity: 0, scale: 1.08, x: 24 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.98, x: -24 }}
                     transition={{ duration: 0.65, ease: 'easeInOut' }}
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
+                    className="absolute inset-0"
+                  >
+                    <LazyVideo
+                      src={slides[activeSlide].video}
+                      poster={slides[activeSlide].poster}
+                      aria-label={slides[activeSlide].label}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="h-full w-full object-cover"
+                    />
+                  </motion.div>
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-transparent to-slate-950/80" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
