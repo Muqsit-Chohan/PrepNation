@@ -1,25 +1,24 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Sparkles, CheckCircle2 } from 'lucide-react';
-import LazyVideo from './LazyVideo';
-import aiChatVideo from '../assets/Video/aichat.mp4';
-import examVideo from '../assets/Video/exam.mp4';
-import notesVideo from '../assets/Video/notes.mp4';
-import topperVideo from '../assets/Video/topper.mp4';
+import aiTutorImage from '../assets/aitutor.jpg';
+import examImage from '../assets/exam.jpg';
+import mcqsImage from '../assets/mcqs.jpg';
+import papersImage from '../assets/papers.jpg';
 
 const WhyChooseUs = () => {
   const [activeVideo, setActiveVideo] = useState(0);
-  const videos = [
-    { src: examVideo },
-    { src: aiChatVideo },
-    { src: notesVideo },
-    { src: topperVideo },
+  const images = [
+    { src: examImage },
+    { src: aiTutorImage },
+    { src: mcqsImage },
+    { src: papersImage },
   ];
 
   useEffect(() => {
-    const timer = window.setInterval(() => setActiveVideo((current) => (current + 1) % videos.length), 3200);
+    const timer = window.setInterval(() => setActiveVideo((current) => (current + 1) % images.length), 3200);
     return () => window.clearInterval(timer);
-  }, [videos.length]);
+  }, [images.length]);
 
   return (
   <section id="about-us" className="py-24 overflow-hidden bg-white relative scroll-mt-24">
@@ -69,8 +68,11 @@ const WhyChooseUs = () => {
                   transition={{ duration: 0.55 }}
                   className="absolute inset-0 h-full w-full object-cover"
                 >
-                  <LazyVideo
-                    src={videos[activeVideo].src}
+                  <img
+                    src={images[activeVideo].src}
+                    alt="PrepNation app preview"
+                    loading="lazy"
+                    decoding="async"
                     autoPlay
                     muted
                     loop

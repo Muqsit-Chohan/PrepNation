@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
-import LazyVideo from './LazyVideo';
 
-import aiChatVideo from '../assets/Video/aichat.mp4';
-import mcqsVideo from '../assets/Video/mcqs.mp4';
-import mockExamsVideo from '../assets/Video/mockexmas.mp4';
-import pastPapersVideo from '../assets/Video/pastpapers.mp4';
+import aiTutorImage from '../assets/aitutor.jpg';
+import examImage from '../assets/exam.jpg';
+import mcqsImage from '../assets/mcqs.jpg';
+import papersImage from '../assets/papers.jpg';
 
 /* ── SVG Doodles ── */
 const Wave = ({ className, color = '#0861A8', size = 70 }) => (
@@ -34,10 +33,10 @@ const Blob = ({ className, color }) => (
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const slides = [
-    { video: mcqsVideo, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
-    { video: aiChatVideo, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
-    { video: pastPapersVideo, label: 'Past Papers', caption: 'Train with real board exams' },
-    { video: mockExamsVideo, label: 'Mock Exams', caption: 'Feel ready before exam day' },
+    { image: mcqsImage, label: 'Chapter-wise MCQs', caption: 'Practice smarter, score higher' },
+    { image: aiTutorImage, label: 'PrepAI Tutor', caption: 'Your doubts, solved instantly' },
+    { image: papersImage, label: 'Past Papers', caption: 'Train with real board exams' },
+    { image: examImage, label: 'Mock Exams', caption: 'Feel ready before exam day' },
   ];
 
   useEffect(() => {
@@ -173,13 +172,12 @@ const Hero = () => {
                     transition={{ duration: 0.65, ease: 'easeInOut' }}
                     className="absolute inset-0"
                   >
-                    <LazyVideo
-                      src={slides[activeSlide].video}
+                    <img
+                      src={slides[activeSlide].image}
                       aria-label={slides[activeSlide].label}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
+                      alt={slides[activeSlide].label}
+                      loading={activeSlide === 0 ? 'eager' : 'lazy'}
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
                   </motion.div>
