@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
+import SmartLink from './SmartLink';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,23 +40,23 @@ const Navbar = () => {
         <div className="mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-12 sm:h-14">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-1 flex-shrink-0">
+            <SmartLink href="/" className="flex items-center gap-1 flex-shrink-0">
               <img src={logo} alt="PrepNation Logo" className="h-7 sm:h-8 w-auto rounded-md" />
               <span className="font-black text-lg sm:text-xl tracking-tight" style={{ color: '#064B83' }}>
                 Prep<span style={{ color: '#0861A8' }}>Nation</span>
               </span>
-            </a>
+            </SmartLink>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <a
+                <SmartLink
                   key={link.name}
                   href={link.href}
                   className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm"
                 >
                   {link.name}
-                </a>
+                </SmartLink>
               ))}
             </div>
 
@@ -93,14 +94,14 @@ const Navbar = () => {
             >
               <div className="px-4 py-4 space-y-1">
                 {navLinks.map((link) => (
-                  <a
+                  <SmartLink
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className="block px-3 py-3 text-gray-700 hover:bg-sky-50 rounded-lg font-medium text-sm transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </SmartLink>
                 ))}
                 <div className="pt-2">
                   <button

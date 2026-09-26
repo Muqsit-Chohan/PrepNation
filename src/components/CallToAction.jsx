@@ -1,9 +1,29 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router';
+import { joinWaitlist } from '../lib/waitlist';
 
 const CallToAction = () => {
   const [email, setEmail] = useState('');
   const [done, setDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email || submitting) return;
+    setSubmitting(true);
+    setError('');
+    try {
+      await joinWaitlist(email);
+      setDone(true);
+    } catch (err) {
+      console.error('Waitlist sign-up failed:', err);
+      setError('Something went wrong. Please try again in a moment.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-20 px-4" id="cta" style={{ background: '#EDF7FF' }}>
@@ -39,7 +59,7 @@ const CallToAction = () => {
 
           {!done ? (
             <form
-              onSubmit={(e) => { e.preventDefault(); if (email) setDone(true); }}
+              onSubmit={handleSubmit}
               className="max-w-md mx-auto flex flex-col sm:flex-row gap-3"
             >
               <input
@@ -57,10 +77,11 @@ const CallToAction = () => {
                 }}
                 transition={{ boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
                 type="submit"
-                className="px-8 py-4 rounded-full font-black text-sm flex-shrink-0"
+                disabled={submitting}
+                className="px-8 py-4 rounded-full font-black text-sm flex-shrink-0 disabled:opacity-70 disabled:cursor-wait"
                 style={{ background: '#8FD3F4', color: '#064B83' }}
               >
-                Join Waitlist
+                {submitting ? 'Joining…' : 'Join Waitlist'}
               </motion.button>
             </form>
           ) : (
@@ -69,7 +90,13 @@ const CallToAction = () => {
               🎉 You're on the list! We'll notify you at launch.
             </div>
           )}
-          <p className="text-white/40 text-xs mt-6">No spam. Unsubscribe anytime.</p>
+          {error && (
+            <p role="alert" className="text-red-200 text-sm font-semibold mt-4">{error}</p>
+          )}
+          <p className="text-white/40 text-xs mt-6">
+            No spam. Unsubscribe anytime. See our{' '}
+            <Link to="/privacy" className="underline hover:text-white/70">Privacy Policy</Link>.
+          </p>
         </div>
       </motion.div>
     </section>

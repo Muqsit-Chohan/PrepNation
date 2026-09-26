@@ -1,11 +1,12 @@
 import { Globe, MessageCircle, Camera, BriefcaseBusiness, Mail } from 'lucide-react';
 import logo from '../assets/logo.png';
+import SmartLink from './SmartLink';
 
 const Footer = () => {
   const links = {
     Company: [['About Us', '#about-us'], ['Careers', 'mailto:dreambyte.space@gmail.com?subject=Careers%20at%20PrepNation'], ['Blog', '#features'], ['Contact', '#announcement']],
     Resources: [['Past Papers', '#for-students'], ['Mock Exams', '#for-students'], ['Study Guides', '#features'], ['Video Library', '#features']],
-    Support: [['Help Center', 'mailto:dreambyte.space@gmail.com?subject=PrepNation%20Help'], ['Terms of Service', '#announcement'], ['Privacy Policy', '#announcement'], ['FAQ', '#features']],
+    Support: [['Help Center', '/help'], ['Terms & Conditions', '/terms'], ['Privacy Policy', '/privacy'], ['FAQ', '/faq']],
   };
 
   return (
@@ -43,9 +44,9 @@ const Footer = () => {
               <ul className="space-y-3">
               {items.map(([item, href]) => (
                   <li key={item}>
-                    <a href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                    <SmartLink href={href} className="text-gray-400 hover:text-white text-sm transition-colors">
                       {item}
-                    </a>
+                    </SmartLink>
                   </li>
                 ))}
               </ul>

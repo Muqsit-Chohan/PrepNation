@@ -1,18 +1,18 @@
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
 
+import { Routes, Route, Navigate } from 'react-router';
+
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Stats from './components/Stats';
-import Companion from './components/Companion';
-import TargetAudience from './components/TargetAudience';
-import Features from './components/Features';
-import Pricing from './components/Pricing';
-import WhyChooseUs from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
-import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import AnimatedCursor from './components/AnimatedCursor';
+import ScrollManager from './components/ScrollManager';
+import SmartLink from './components/SmartLink';
+import Home from './pages/Home';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import HelpCenter from './pages/HelpCenter';
+import Faq from './pages/Faq';
 
 function App() {
   useEffect(() => {
@@ -45,17 +45,15 @@ function App() {
     <div className="min-h-screen bg-noise bg-sky-50/40">
       <AnimatedCursor />
       <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <Companion />
-        <TargetAudience />
-        <Features />
-        <Pricing />
-        <WhyChooseUs />
-        <Testimonials />
-        <CallToAction />
-      </main>
+      <ScrollManager />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/help" element={<HelpCenter />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
       <Footer />
 
       {/* Global Bottom Announcement Bar */}
@@ -65,9 +63,9 @@ function App() {
         style={{ background: '#064B83' }}
       >
         🎉 Launching on Google Play &amp; App Store soon!{' '}
-        <a href="#cta" className="underline font-bold transition-all hover:opacity-80" style={{ color: '#B9E4FF' }}>
+        <SmartLink href="#cta" className="underline font-bold transition-all hover:opacity-80" style={{ color: '#B9E4FF' }}>
           Join the waitlist &amp; get 30 days Premium FREE
-        </a>
+        </SmartLink>
       </div>
     </div>
   );
