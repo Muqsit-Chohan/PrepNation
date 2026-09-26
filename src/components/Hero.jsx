@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
 
-import aiTutorImage from '../assets/aitutor.jpg';
-import examImage from '../assets/exam.jpg';
-import mcqsImage from '../assets/mcqs.jpg';
-import pastPaperImage from '../assets/pastpaper.jpg';
+import aiTutorImage from '../assets/aitutor.webp';
+import examImage from '../assets/exam.webp';
+import mcqsImage from '../assets/mcqs.webp';
+import pastPaperImage from '../assets/pastpaper.webp';
 
 /* ── SVG Doodles ── */
 const Wave = ({ className, color = '#0861A8', size = 70 }) => (

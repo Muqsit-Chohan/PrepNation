@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Sparkles, CheckCircle2 } from 'lucide-react';
-import aiTutorImage from '../assets/aitutor.jpg';
-import examImage from '../assets/exam.jpg';
-import mcqsImage from '../assets/mcqs.jpg';
-import papersImage from '../assets/papers.jpg';
+import aiTutorImage from '../assets/aitutor.webp';
+import examImage from '../assets/exam.webp';
+import mcqsImage from '../assets/mcqs.webp';
+import papersImage from '../assets/papers.webp';
 
 const images = [
   { src: examImage },
@@ -76,13 +76,8 @@ const WhyChooseUs = () => {
                   <img
                     src={images[activeVideo].src}
                     alt="PrepNation app preview"
-                    loading="eager"
-                    fetchPriority="high"
+                    loading="lazy"
                     decoding="async"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
                     className="h-full w-full object-cover"
                   />
                 </motion.div>

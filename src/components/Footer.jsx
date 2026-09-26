@@ -1,5 +1,5 @@
 import { Globe, MessageCircle, Camera, BriefcaseBusiness, Mail } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 import SmartLink from './SmartLink';
 
 const Footer = () => {
