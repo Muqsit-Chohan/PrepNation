@@ -18,7 +18,7 @@ const faqGroups = [
     id: 'waitlist',
     title: 'Waitlist & Launch Offer',
     items: [
-      ['How do I join the waitlist?', 'Enter your email in the "Join Waitlist" form on the home page. You will get launch updates and your free Premium pass by email.'],
+      ['How do I join the waitlist?', 'Enter your name, phone number and email in the "Join Waitlist" form on the home page. You will get launch updates and your free Premium pass by email.'],
       ['What do waitlist members get?', 'Everyone who joins the waitlist before launch gets a 30-day Premium pass free when the app goes live.'],
       ['Will you spam my inbox?', 'No. We only email launch news and important updates, and you can unsubscribe at any time.'],
     ],

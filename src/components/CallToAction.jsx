@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import { joinWaitlist } from '../lib/waitlist';
 
 const CallToAction = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [done, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -11,11 +13,11 @@ const CallToAction = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || submitting) return;
+    if (!name || !phone || !email || submitting) return;
     setSubmitting(true);
     setError('');
     try {
-      await joinWaitlist(email);
+      await joinWaitlist({ name, phone, email });
       setDone(true);
     } catch (err) {
       console.error('Waitlist sign-up failed:', err);
@@ -60,14 +62,30 @@ const CallToAction = () => {
           {!done ? (
             <form
               onSubmit={handleSubmit}
-              className="max-w-md mx-auto flex flex-col sm:flex-row gap-3"
+              className="max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3"
             >
               <input
-                type="email" required value={email}
+                type="text" required value={name} maxLength={100} autoComplete="name"
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your full name"
+                aria-label="Full name"
+                className="px-6 py-4 rounded-full text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 text-sm"
+              />
+              <input
+                type="tel" required value={phone} autoComplete="tel" inputMode="tel"
+                pattern="\+?[0-9\s\-]{10,16}"
+                title="Enter a valid phone number, e.g. 03001234567"
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone number (03XX XXXXXXX)"
+                aria-label="Phone number"
+                className="px-6 py-4 rounded-full text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 text-sm"
+              />
+              <input
+                type="email" required value={email} autoComplete="email"
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 rounded-full text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 text-sm"
-                style={{ focusRingColor: '#F59E0B' }}
+                aria-label="Email address"
+                className="sm:col-span-2 px-6 py-4 rounded-full text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 text-sm"
               />
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -78,7 +96,7 @@ const CallToAction = () => {
                 transition={{ boxShadow: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
                 type="submit"
                 disabled={submitting}
-                className="px-8 py-4 rounded-full font-black text-sm flex-shrink-0 disabled:opacity-70 disabled:cursor-wait"
+                className="sm:col-span-2 px-8 py-4 rounded-full font-black text-sm disabled:opacity-70 disabled:cursor-wait"
                 style={{ background: '#8FD3F4', color: '#064B83' }}
               >
                 {submitting ? 'Joining…' : 'Join Waitlist'}

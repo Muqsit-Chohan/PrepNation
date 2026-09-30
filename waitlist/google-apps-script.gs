@@ -14,7 +14,8 @@
  */
 
 const SHEET_NAME = 'Waitlist';
-const HEADERS = ['Joined At', 'Email', 'Source', 'User Agent'];
+// New columns go at the end so rows saved before Name/Phone existed stay aligned.
+const HEADERS = ['Joined At', 'Email', 'Source', 'User Agent', 'Name', 'Phone'];
 
 function doPost(e) {
   const params = (e && e.parameter) || {};
@@ -23,6 +24,11 @@ function doPost(e) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
     return json({ ok: false, error: 'invalid_email' });
   }
+
+  const name = String(params.name || '').trim().slice(0, 100);
+  const phone = String(params.phone || '').trim();
+  if (!name) return json({ ok: false, error: 'invalid_name' });
+  if (!/^\+?[0-9\s-]{10,16}$/.test(phone)) return json({ ok: false, error: 'invalid_phone' });
 
   // Serialise writes so two simultaneous sign-ups can't both pass the duplicate check.
   const lock = LockService.getScriptLock();
@@ -40,6 +46,9 @@ function doPost(e) {
       email,
       String(params.source || '').slice(0, 100),
       String(params.userAgent || '').slice(0, 300),
+      name,
+      // Leading apostrophe keeps the number as text so Sheets doesn't drop the leading 0.
+      "'" + phone,
     ]);
     return json({ ok: true });
   } finally {
@@ -52,9 +61,11 @@ function getSheet() {
   let sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
-    sheet.appendRow(HEADERS);
+  }
+  // Also upgrades a sheet created by the older version of this script.
+  if (sheet.getLastColumn() < HEADERS.length) {
+    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]).setFontWeight('bold');
     sheet.setFrozenRows(1);
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold');
   }
   return sheet;
 }

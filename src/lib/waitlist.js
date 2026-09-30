@@ -2,7 +2,7 @@
 // See waitlist/google-apps-script.gs for setup.
 const WAITLIST_URL = import.meta.env.VITE_WAITLIST_URL;
 
-export async function joinWaitlist(email) {
+export async function joinWaitlist({ name, phone, email }) {
   if (!WAITLIST_URL) {
     throw new Error('VITE_WAITLIST_URL is not configured');
   }
@@ -14,6 +14,8 @@ export async function joinWaitlist(email) {
     method: 'POST',
     mode: 'no-cors',
     body: new URLSearchParams({
+      name: name.trim(),
+      phone: phone.trim(),
       email: email.trim(),
       source: window.location.href,
       userAgent: navigator.userAgent,

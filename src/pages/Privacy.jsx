@@ -15,7 +15,7 @@ const sections = [
       'Information you give us:',
       {
         list: [
-          'Waitlist and contact details, such as your email address when you join our waitlist.',
+          'Waitlist and contact details, such as your name, phone number and email address when you join our waitlist.',
           'Account details, such as your name, email, phone number, class or exam you are preparing for.',
           'Messages you send us through email, WhatsApp or in-app support.',
         ],
