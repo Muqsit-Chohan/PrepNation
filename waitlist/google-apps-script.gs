@@ -1,8 +1,8 @@
 /**
- * PrepNation waitlist → Google Sheet.
+ * Prep4Ever waitlist → Google Sheet.
  *
  * Setup (one time):
- *  1. Create a Google Sheet (e.g. "PrepNation Waitlist").
+ *  1. Create a Google Sheet (e.g. "Prep4Ever Waitlist").
  *  2. Extensions → Apps Script, delete the sample code and paste this file.
  *  3. Deploy → New deployment → type "Web app".
  *       Execute as: Me    |    Who has access: Anyone

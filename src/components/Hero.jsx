@@ -90,7 +90,7 @@ const Hero = () => {
             </div>
 
             <p className="text-gray-500 text-md leading-relaxed mb-10 max-w-md">
-              PrepNation is a complete mobile application for notes, MCQs, past papers, mock tests and AI support—built specifically for Matric, Inter, O-Level &amp; A-Level students across Pakistan.
+              Prep4Ever is a complete mobile application for notes, MCQs, past papers, mock tests and AI support—built specifically for Matric, Inter, O-Level &amp; A-Level students across Pakistan.
             </p>
 
             <div className="flex items-center gap-5 -mt-7  flex-wrap">
@@ -190,7 +190,7 @@ const Hero = () => {
                 </AnimatePresence>
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-transparent to-slate-950/80" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-sky-200">PrepNation</p>
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.18em] text-sky-200">Prep4Ever</p>
                   <h3 className="text-xl font-black leading-tight">{slides[activeSlide].label}</h3>
                   <p className="mt-1 text-xs text-white/75">{slides[activeSlide].caption}</p>
                 </div>
@@ -222,7 +222,7 @@ const Hero = () => {
         className="hero-giant-text absolute left-1/2 pb-10 -translate-x-1/2  z-[1]"
         aria-hidden="true"
       >
-        PREPNATION
+        PREP4EVER
       </div>
     </section>
   );

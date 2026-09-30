@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo-blue.png';
 import SmartLink from './SmartLink';
 
 const Navbar = () => {
@@ -41,10 +41,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-12 sm:h-14">
             {/* Logo */}
             <SmartLink href="/" className="flex items-center gap-1 flex-shrink-0">
-              <img src={logo} alt="PrepNation Logo" className="h-7 sm:h-8 w-auto rounded-md" />
-              <span className="font-black text-lg sm:text-xl tracking-tight" style={{ color: '#064B83' }}>
-                Prep<span style={{ color: '#0861A8' }}>Nation</span>
-              </span>
+              <img src={logo} alt="Prep4Ever" className="h-9 sm:h-10 w-auto [filter:drop-shadow(0_1px_0.5px_rgba(255,255,255,0.85))]" />
             </SmartLink>
 
             {/* Desktop Menu */}

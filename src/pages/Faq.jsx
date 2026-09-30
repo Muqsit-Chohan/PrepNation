@@ -8,10 +8,10 @@ const faqGroups = [
     id: 'general',
     title: 'General',
     items: [
-      ['What is PrepNation?', 'PrepNation is an exam-preparation app for students in Pakistan. It brings notes, MCQ practice, past papers, mock tests, progress tracking and an AI Tutor together in one place.'],
-      ['Who is PrepNation for?', 'Matric and Intermediate students across Pakistan (FBISE, Punjab, Sindh and other boards) who want structured, focused practice for their board exams.'],
-      ['When will the app launch?', 'PrepNation is launching soon on Google Play and the App Store. Join the waitlist on our home page and we will email you the moment it goes live.'],
-      ['Does PrepNation work offline?', 'Offline downloads of notes and past papers are included in the Premium plan (PKR 299/month). Other features need an internet connection.'],
+      ['What is Prep4Ever?', 'Prep4Ever is an exam-preparation app for students in Pakistan. It brings notes, MCQ practice, past papers, mock tests, progress tracking and an AI Tutor together in one place.'],
+      ['Who is Prep4Ever for?', 'Matric and Intermediate students across Pakistan (FBISE, Punjab, Sindh and other boards) who want structured, focused practice for their board exams.'],
+      ['When will the app launch?', 'Prep4Ever is launching soon on Google Play and the App Store. Join the waitlist on our home page and we will email you the moment it goes live.'],
+      ['Does Prep4Ever work offline?', 'Offline downloads of notes and past papers are included in the Premium plan (PKR 299/month). Other features need an internet connection.'],
     ],
   },
   {
@@ -35,7 +35,7 @@ const faqGroups = [
   },
   {
     id: 'study',
-    title: 'Studying with PrepNation',
+    title: 'Studying with Prep4Ever',
     items: [
       ['Which boards and exams are covered?', 'We are starting with the major Pakistani boards and entry tests, and adding more subjects and boards regularly. Tell us which one you need and we will prioritise it.'],
       ['How does the AI Tutor work?', 'Ask any question about a topic or an MCQ and the AI Tutor explains it step by step. AI answers can occasionally be wrong, so double-check important points with your textbook or teacher.'],
@@ -78,7 +78,7 @@ const Faq = () => (
   <PageLayout
     eyebrow="Support"
     title="Frequently Asked Questions"
-    intro="Quick answers about PrepNation, the launch waitlist, plans and your account. Can't find what you need? Visit the Help Center."
+    intro="Quick answers about Prep4Ever, the launch waitlist, plans and your account. Can't find what you need? Visit the Help Center."
   >
     <div className="space-y-8">
       {faqGroups.map((group) => (

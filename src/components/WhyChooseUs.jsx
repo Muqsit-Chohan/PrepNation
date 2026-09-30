@@ -75,7 +75,7 @@ const WhyChooseUs = () => {
                 >
                   <img
                     src={images[activeVideo].src}
-                    alt="PrepNation app preview"
+                    alt="Prep4Ever app preview"
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover"
@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-b from-[#064B83]/15 via-transparent to-[#06040F]/80" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#B9E4FF]">PrepNation app</p>
+                  <p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#B9E4FF]">Prep4Ever app</p>
                   <h3 className="mt-1 text-lg font-bold">Learn. Practice. Improve.</h3>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const WhyChooseUs = () => {
           </h2>
           
           <p className="text-gray-500 leading-relaxed mb-8 text-base">
-            PrepNation is a complete mobile application created to bridge the gap between traditional academy rote-learning and modern exam prep. Every single question in our bank is verified by senior board examiners.
+            Prep4Ever is a complete mobile application created to bridge the gap between traditional academy rote-learning and modern exam prep. Every single question in our bank is verified by senior board examiners.
           </p>
 
           <div className="space-y-4 mb-8">
@@ -157,7 +157,7 @@ const WhyChooseUs = () => {
             className="px-8 py-4 rounded-full font-black text-gray-900 shadow-[0_8px_24px_rgba(21,154,156,0.24)]"
             style={{ background: '#8FD3F4' }}
           >
-            Download the PrepNation Mobile App
+            Download the Prep4Ever Mobile App
           </motion.button>
         </motion.div>
 

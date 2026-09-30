@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 // Navbar and footer come from App.
 const PageLayout = ({ eyebrow, title, subtitle, intro, children }) => {
   useEffect(() => {
-    document.title = `${title} | PrepNation`;
+    document.title = `${title} | Prep4Ever`;
   }, [title]);
 
   return (

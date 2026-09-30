@@ -92,7 +92,7 @@ const Companion = () => (
             </div>
             <div>
               <p className="font-black text-sm text-indigo-950">50,000+ Active Students</p>
-              <p className="text-[11px] text-gray-400 font-medium">Learning on the PrepNation mobile app</p>
+              <p className="text-[11px] text-gray-400 font-medium">Learning on the Prep4Ever mobile app</p>
             </div>
           </motion.div>
         </motion.div>
@@ -111,7 +111,7 @@ const Companion = () => (
             A Smarter, More<br />Collaborative Way to Study
           </h2>
           <p className="text-gray-500 leading-relaxed mb-8 text-base">
-            PrepNation isn't just a test-prep tool — it's your complete exam companion.
+            Prep4Ever isn't just a test-prep tool — it's your complete exam companion.
             Access thousands of topic-wise MCQs, chapter notes, video explanations,
             and a real-time AI tutor to clear every doubt instantly.
           </p>

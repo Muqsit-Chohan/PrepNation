@@ -5,7 +5,7 @@ const sections = [
     id: 'overview',
     title: 'Overview',
     body: [
-      'PrepNation ("we", "us", "our") respects your privacy. This Privacy Policy explains what information we collect when you use the PrepNation mobile application, website and related services (the "Services"), how we use it, and the choices you have.',
+      'Prep4Ever ("we", "us", "our") respects your privacy. This Privacy Policy explains what information we collect when you use the Prep4Ever mobile application, website and related services (the "Services"), how we use it, and the choices you have.',
     ],
   },
   {
@@ -54,9 +54,9 @@ const sections = [
       'We do not sell your personal information. We share it only:',
       {
         list: [
-          'With service providers that help us run PrepNation, such as hosting, analytics, email and payment providers, under confidentiality obligations.',
+          'With service providers that help us run Prep4Ever, such as hosting, analytics, email and payment providers, under confidentiality obligations.',
           'With AI service providers, limited to the content needed to answer your AI Tutor questions.',
-          'When required by law, or to protect the rights, safety and security of our users and PrepNation.',
+          'When required by law, or to protect the rights, safety and security of our users and Prep4Ever.',
           'As part of a merger, acquisition or sale of assets, in which case you will be notified.',
         ],
       },
@@ -66,7 +66,7 @@ const sections = [
     id: 'children',
     title: 'Students Under 18',
     body: [
-      'Many of our users are school and college students. If you are under 18, please use PrepNation with the consent of a parent or guardian. Parents or guardians who believe their child has provided information without consent can contact us to have it reviewed or deleted.',
+      'Many of our users are school and college students. If you are under 18, please use Prep4Ever with the consent of a parent or guardian. Parents or guardians who believe their child has provided information without consent can contact us to have it reviewed or deleted.',
     ],
   },
   {
@@ -125,7 +125,7 @@ const Privacy = () => (
   <LegalPage
     title="Privacy Policy"
     lastUpdated="September 26, 2026"
-    intro="Your trust matters to us. This policy explains what information PrepNation collects, why we collect it, and how you can control it."
+    intro="Your trust matters to us. This policy explains what information Prep4Ever collects, why we collect it, and how you can control it."
     sections={sections}
   />
 );

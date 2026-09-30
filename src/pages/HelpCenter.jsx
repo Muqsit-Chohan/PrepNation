@@ -4,7 +4,7 @@ import PageLayout from './PageLayout';
 
 // Each topic links to the matching group on the FAQ page.
 const topics = [
-  { icon: Rocket, title: 'Getting Started', text: 'What PrepNation is, launch dates and the waitlist offer.', href: '/faq#general' },
+  { icon: Rocket, title: 'Getting Started', text: 'What Prep4Ever is, launch dates and the waitlist offer.', href: '/faq#general' },
   { icon: CreditCard, title: 'Plans & Payments', text: 'Free vs Premium, pricing, payments and cancelling.', href: '/faq#plans' },
   { icon: BookOpen, title: 'Studying', text: 'Boards covered, past papers and using the AI Tutor.', href: '/faq#study' },
   { icon: UserCog, title: 'Account & Privacy', text: 'Keeping your data safe and deleting your account.', href: '/faq#account' },
@@ -23,7 +23,7 @@ const contacts = [
     title: 'Email',
     text: 'For detailed questions, account requests and feedback.',
     label: 'dreambyte.space@gmail.com',
-    href: 'mailto:dreambyte.space@gmail.com?subject=PrepNation%20Help',
+    href: 'mailto:dreambyte.space@gmail.com?subject=Prep4Ever%20Help',
   },
 ];
 
@@ -31,7 +31,7 @@ const HelpCenter = () => (
   <PageLayout
     eyebrow="Support"
     title="Help Center"
-    intro="Find answers by topic or get in touch with the PrepNation team. We're here to help you prepare with confidence."
+    intro="Find answers by topic or get in touch with the Prep4Ever team. We're here to help you prepare with confidence."
   >
     <section className="mb-14">
       <h2 className="text-xl font-bold mb-5" style={{ color: '#064B83' }}>Browse help topics</h2>

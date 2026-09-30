@@ -11,7 +11,7 @@ import CallToAction from '../components/CallToAction';
 
 const Home = () => {
   useEffect(() => {
-    document.title = 'PrepNation';
+    document.title = 'Prep4Ever';
   }, []);
 
   return (

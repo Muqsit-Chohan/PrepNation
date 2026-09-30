@@ -1,10 +1,10 @@
 import { Globe, MessageCircle, Camera, BriefcaseBusiness, Mail } from 'lucide-react';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo.png';
 import SmartLink from './SmartLink';
 
 const Footer = () => {
   const links = {
-    Company: [['About Us', '#about-us'], ['Careers', 'mailto:dreambyte.space@gmail.com?subject=Careers%20at%20PrepNation'], ['Blog', '#features'], ['Contact', '#announcement']],
+    Company: [['About Us', '#about-us'], ['Careers', 'mailto:dreambyte.space@gmail.com?subject=Careers%20at%20Prep4Ever'], ['Blog', '#features'], ['Contact', '#announcement']],
     Resources: [['Past Papers', '#for-students'], ['Mock Exams', '#for-students'], ['Study Guides', '#features'], ['Video Library', '#features']],
     Support: [['Help Center', '/help'], ['Terms & Conditions', '/terms'], ['Privacy Policy', '/privacy'], ['FAQ', '/faq']],
   };
@@ -17,15 +17,14 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-5">
-              <img src={logo} alt="PrepNation Logo" className="h-8 w-auto rounded-md" />
-              <span className="font-bold text-xl">PrepNation</span>
+              <img src={logo} alt="Prep4Ever" className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Pakistan's smartest exam-prep mobile application. Learn, practice and track your progress from one powerful app.
             </p>
             <div className="flex gap-4 text-white">
               {[
-                [Globe, 'https://prepnation.pk'],
+                [Globe, 'https://prep4ever.pk'],
                 [MessageCircle, 'https://wa.me/923102110584'],
                 [Camera, 'https://www.instagram.com/'],
                 [BriefcaseBusiness, 'https://www.linkedin.com/'],
@@ -56,11 +55,11 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white text-sm">
-            © 2026 PrepNation. All rights reserved.
+            © 2026 Prep4Ever. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-white text-sm">
             <Mail size={14} />
-            <a href="mailto:support@prepnation.pk" className="hover:text-white transition-colors">dreambyte.space@gmail.com</a>
+            <a href="mailto:support@prep4ever.pk" className="hover:text-white transition-colors">dreambyte.space@gmail.com</a>
           </div>
         </div>
       </div>

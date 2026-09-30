@@ -6,14 +6,14 @@ const reviews = [
   {
     name: 'Ali Raza',
     board: 'Federal Board, Islamabad',
-    text: "PrepNation changed how I study completely. The AI tutor cleared my physics doubts instantly — something my teacher couldn't do in 3 months!",
+    text: "Prep4Ever changed how I study completely. The AI tutor cleared my physics doubts instantly — something my teacher couldn't do in 3 months!",
     initial: 'A',
     bg: '#0861A8',
   },
   {
     name: 'Fatima Sheikh',
     board: 'Sindh Board, Karachi',
-    text: "The past papers are extremely organized and explanations are super detailed. My score went from 72% to 91% in just one month of using PrepNation.",
+    text: "The past papers are extremely organized and explanations are super detailed. My score went from 72% to 91% in just one month of using Prep4Ever.",
     initial: 'F',
     bg: '#3B91C8',
   },

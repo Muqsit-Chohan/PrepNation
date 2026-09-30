@@ -5,15 +5,15 @@ const sections = [
     id: 'acceptance',
     title: 'Acceptance of Terms',
     body: [
-      'By downloading, accessing or using the PrepNation mobile application, website or any related services (together, the "Services"), you agree to be bound by these Terms & Conditions. If you do not agree, please do not use the Services.',
-      'If you are under 18, you may use PrepNation only with the involvement and consent of a parent or legal guardian, who agrees to these Terms on your behalf.',
+      'By downloading, accessing or using the Prep4Ever mobile application, website or any related services (together, the "Services"), you agree to be bound by these Terms & Conditions. If you do not agree, please do not use the Services.',
+      'If you are under 18, you may use Prep4Ever only with the involvement and consent of a parent or legal guardian, who agrees to these Terms on your behalf.',
     ],
   },
   {
     id: 'services',
     title: 'Our Services',
     body: [
-      'PrepNation is an exam-preparation platform for students in Pakistan. The Services include study notes, MCQ practice, past papers, mock exams, performance tracking, AI-assisted tutoring and, on some plans, mentorship.',
+      'Prep4Ever is an exam-preparation platform for students in Pakistan. The Services include study notes, MCQ practice, past papers, mock exams, performance tracking, AI-assisted tutoring and, on some plans, mentorship.',
       'We may add, change or remove features at any time. Content is provided for learning and practice purposes; we do not guarantee any particular exam result or admission outcome.',
     ],
   },
@@ -36,7 +36,7 @@ const sections = [
     id: 'subscriptions',
     title: 'Subscriptions & Payments',
     body: [
-      'PrepNation offers a free plan and paid Premium plans. Prices are shown in Pakistani Rupees (PKR) and may change; any change will apply from your next billing period.',
+      'Prep4Ever offers a free plan and paid Premium plans. Prices are shown in Pakistani Rupees (PKR) and may change; any change will apply from your next billing period.',
       {
         list: [
           'Paid plans renew automatically at the end of each billing period unless cancelled before the renewal date.',
@@ -54,7 +54,7 @@ const sections = [
       'You agree not to:',
       {
         list: [
-          'Copy, resell, redistribute or publicly share PrepNation content without our written permission.',
+          'Copy, resell, redistribute or publicly share Prep4Ever content without our written permission.',
           'Use bots, scrapers or other automated means to access the Services.',
           'Attempt to interfere with, reverse-engineer or gain unauthorised access to the Services.',
           'Use the Services for cheating in any examination or for any unlawful purpose.',
@@ -67,7 +67,7 @@ const sections = [
     id: 'intellectual-property',
     title: 'Intellectual Property',
     body: [
-      'All content on PrepNation, including notes, questions, explanations, graphics, logos and software, is owned by PrepNation or its licensors and is protected by applicable intellectual property laws. We grant you a limited, personal, non-transferable licence to use the Services for your own non-commercial study.',
+      'All content on Prep4Ever, including notes, questions, explanations, graphics, logos and software, is owned by Prep4Ever or its licensors and is protected by applicable intellectual property laws. We grant you a limited, personal, non-transferable licence to use the Services for your own non-commercial study.',
       'Past papers published by examination boards remain the property of their respective owners and are provided for educational reference.',
     ],
   },
@@ -82,14 +82,14 @@ const sections = [
     id: 'termination',
     title: 'Suspension & Termination',
     body: [
-      'We may suspend or terminate your access if you breach these Terms or misuse the Services. You may stop using PrepNation and request deletion of your account at any time by contacting us.',
+      'We may suspend or terminate your access if you breach these Terms or misuse the Services. You may stop using Prep4Ever and request deletion of your account at any time by contacting us.',
     ],
   },
   {
     id: 'liability',
     title: 'Disclaimers & Limitation of Liability',
     body: [
-      'The Services are provided "as is" and "as available" without warranties of any kind. To the fullest extent permitted by law, PrepNation will not be liable for any indirect, incidental or consequential loss arising from your use of the Services, and our total liability will not exceed the amount you paid us in the three months before the claim.',
+      'The Services are provided "as is" and "as available" without warranties of any kind. To the fullest extent permitted by law, Prep4Ever will not be liable for any indirect, incidental or consequential loss arising from your use of the Services, and our total liability will not exceed the amount you paid us in the three months before the claim.',
     ],
   },
   {
@@ -119,7 +119,7 @@ const Terms = () => (
   <LegalPage
     title="Terms & Conditions"
     lastUpdated="September 26, 2026"
-    intro="These Terms & Conditions explain the rules for using PrepNation. Please read them carefully — they cover your account, subscriptions, acceptable use and your rights and responsibilities."
+    intro="These Terms & Conditions explain the rules for using Prep4Ever. Please read them carefully — they cover your account, subscriptions, acceptable use and your rights and responsibilities."
     sections={sections}
   />
 );
